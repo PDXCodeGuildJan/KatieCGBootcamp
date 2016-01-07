@@ -25,11 +25,11 @@ madlib = madlib + adjective + " laughter that only The Master could accomplish. 
 
 past_verb = input("Please give a past tense verb: ")
 
-madlib = madlib + past_verb + " The Doctor and The Master in "
+madlib += past_verb + " The Doctor and The Master in "
 
 adjective = input("Please give an adjective: ")
 
-madlib = madlib + adjective + " combat over a sonic screwdriver."
+madlib += adjective + " combat over a sonic screwdriver."
 
 
 print (madlib)
