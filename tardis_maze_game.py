@@ -2,63 +2,93 @@
 
 #Have the user enter the console room, greet them, and let them choose between a few preset directions to go in
 #(library[left], swimming pool[forward], or Amy's room[right])
-def main():
-	print("""You're walking down a busy street when a bright blue old fasioned Police Box catches your eye. 
-	After a brief deliberation, you decide to open its doors and walk inside. You are greeted by a voice on what 
-	you can only guess is some sort of intercom- but that isn't what surprises you. The inside is massive- much
-	larger than what the outside suggested. In fact, it looked to you like the Police Box could go on and on forever;
-	with rooms upon rooms upon rooms that you just wanted to explore. Enter 'quit' to exit the program at any time. """)
+def main(direction):
+	# print("""You're walking down a busy street when a bright blue old fasioned Police Box catches your eye. 
+	# After a brief deliberation, you decide to open its doors and walk inside. You are greeted by a voice on what 
+	# you can only guess is some sort of intercom- but that isn't what surprises you. The inside is massive- much
+	# larger than what the outside suggested. In fact, it looked to you like the Police Box could go on and on forever;
+	# with rooms upon rooms upon rooms that you just wanted to explore. Enter 'quit' to exit the program at any time. """)
 
-	entry = ""
-
-	if entry == "quit":
-		print("Goodbye!")
+	# direction = ""
+	#print("Yo we're here")
+	if direction.lower() == "quit":
+		print("Please come back to play again soon! Goodbye!")
 		quit()
+
 
 	console_room()
 
 def console_room():
-
-	print("""The voice spoke. 
+	print("""
+	You're walking down a busy street when a bright blue old fasioned Police Box catches your eye. 
+	After a brief deliberation, you decide to open its doors and walk inside. You are greeted by a voice on what 
+	you can only guess is some sort of intercom- but that isn't what surprises you. The inside is massive- much
+	larger than what the outside suggested. In fact, it looked to you like the Police Box could go on and on forever;
+	with rooms upon rooms upon rooms that you just wanted to explore.
+	-------
+	The voice spoke. 
 	Hello and welcome to the Tardis! That's Time and Relative Dimension in Space, to you! 
 	The Doctor is out but I will be your virtual host. You have the freedom
 	to go wherever you'd like. There are many rooms to explore. Choose a direction to go and let's get started!
-	You have the ability to go left, forward, or right.""")
+	You have the ability to go left, forward, or right. Enter 'quit' to exit the program at any time. """)
 
-	direction = ""
-	while direction != "quit":
-
+	
+	direction = input ("Would you like to go left, forward, or right?> ")
+	while direction.lower() != "quit":
 		if direction == "left":
+			print("You head through a long corridor...")
 			library()
 		elif direction == "forward":
+			print("You walk through a hallway completely covered in white tile...")
 			swimming_pool()
 		elif direction == "right":
+			print("You take the door on your right and your are immediately taken through to a parlor much like your Grandmother's...")
 			ponds_room()
 		else: 
 			print("I do not understand.")
+			console_room()
+	
+	main(direction)
+
+
+def console_room_two():
+	print("""
+		You find yourself back in the console room.
 
 
 
+
+
+		""")
 
 
 
 #This will be the library- maybe introduce the silence??? You can travel to the storage room and swimming pool 
 #from the library
- def library():
- 	print("""You enter the single most expansive room you've ever seen. Miraculously, no dust seems to have settled anywhere. It's definitely
+def library():
+	print("""
+
+
+
+
+		You enter the single most expansive room you've ever seen. Miraculously, no dust seems to have settled anywhere. It's definitely
  		one of the more looked after and popular rooms in the entire place. Ornate wooden bookshelves line the entire perimeter of the room. 
  		Books, old and new, fill the shelves. Near you, very ancient looking scrolls lay atop a large desk. The desk is one of many that
  		take up much of the empty space in the room. There are soft chairs with tables and desk lamps set next to them, couches with 
- 		colorful pillows, and piles and piles of books sit on most of the available flat surfaces- including the floor.""")
+ 		colorful pillows, and piles and piles of books sit on most of the available flat surfaces- including the floor. "Hearing a loud noise, 
+ 		you shake with a start. Not wanting to stick around to find out who or what made the sound, you look towards the only two exits. """)
 
-# 	direction = ""
-# 	while direction != "quit":
-# 		if direction == up:
-# 			storage_room()
-# 		elif direction == down:
-# 			swimming_pool()
-# 		else:
-# 			print("I do not understand.")
+	direction = input ("Would you like to go up or down?> ")
+	while direction.lower() != "quit":
+		if direction == "up":
+ 			storage_room()
+		elif direction == "down":
+			swimming_pool()
+		else:
+ 			print("I do not understand.")
+ 			library()
+
+	main(direction)
 
 
 
@@ -70,9 +100,8 @@ def storage_room():
 		another houses miniature versions of the Tardis. You look around for awhile, but realizing you could spend an 
 		entire day in that one room, you decide to move on.""")
 
-	direction = ""
-	while direction != "quit":
-		direction = input("Would you like to go down or right?")
+	direction = input("Would you like to go down or right?")
+	while direction.lower() != "quit":
 		if direction == "down":
 			library()
 		elif direction == "right":
@@ -80,6 +109,8 @@ def storage_room():
 		else:
 			print("I do not understand.")
 			storage_room()
+
+	main(direction)
 
 
 
@@ -93,9 +124,8 @@ def circular_room():
 		you're saddened by it- as if it were a reminder of a person or event wanted to be forgotten but always
 		cherished. Compelled to move on, you do.""")
 
-	direction = ""
-	while direction != "quit":
-		direction = input("Would you like to go left or down?")
+	direction = input("Would you like to go left or down?")
+	while direction.lower() != "quit":
 		if direction == "left":
 			storage_room()
 		elif direction == "down":
@@ -103,6 +133,8 @@ def circular_room():
 		else: 
 			print("I do not understand.")
 			circular_room()
+
+	main(direction)
 
 
 
@@ -113,9 +145,8 @@ def swimming_pool():
 	much room to walk around it. The light reflecting off the pool water dances on the walls and ceiling of the room. You take off your 
 	shoes and dip your toes into the pool. You have a feeling that time doesn't matter much here.""")
 
-	direction = ""
-	while direction != "quit":
-		direction = input("Would you like to go up, left, or down?")
+	direction = input("Would you like to go up, left, or down?")
+	while direction.lower() != "quit":
 		if direction == "up":
 			circular_room()
 		elif direction == "left":
@@ -126,6 +157,8 @@ def swimming_pool():
 			print("I do not understand.")
 			swimming_pool()
 
+	main(direction)
+
 #Ponds' room. Bunk bed, Amy's childhood drawings of The Doctor... No places to move from here (yet) except for the Console
 #room.
 def ponds_room():
@@ -134,14 +167,14 @@ def ponds_room():
 		bunkbed pushed into one corner, an over-stuffed chair in another, and curiously, a very authentic looking centurian outfit 
 		laying in another.""")
 
-	direction = ""
-	while direction != "quit":
-		direction =input("You may only go left.")
+	direction =input("You may only go left.")
+	while direction.lower() != "quit":
 		if direction == "left":
 			console_room()
 		else:
 			print("I do not understand.")
 			ponds_room()
+	main(direction)
 
-main()
+console_room()
 
