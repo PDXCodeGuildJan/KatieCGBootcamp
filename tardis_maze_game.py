@@ -11,7 +11,16 @@ def main(direction):
 	console_room()
 
 def console_room():
-	print("""You're walking down a busy street when a bright blue old fasioned Police Box catches your eye. 
+	print("""
+	 _____		                   														
+	/__   \ __ _  _ __  _| |(_) ___    /__\__  __ _ __  | |  ___   _ __  ___  _ __ 
+	 / /\// _` || '__|/ _` || |/ __|  /_\  \ \/ /| '_ \ | | / _ \ | '__|/ _ \| '__|
+	/ /  | (_| || |  | (_| || |\__ \ //__   >  < | |_) || || (_) || |  |  __/| |   
+	\/    \__,_||_|   \__,_||_||___/ \__/  /_/\_\| .__/ |_| \___/ |_|   \___||_|   
+                                              	 |_|                               
+
+
+You're walking down a busy street when a bright blue old fasioned Police Box catches your eye. 
 After a brief deliberation, you decide to open its doors and walk inside. You are greeted by a voice on what 
 you can only guess is some sort of intercom- but that isn't what surprises you. The inside is massive- much
 larger than what the outside suggested. In fact, it looked to you like the Police Box could go on and on forever;
@@ -54,11 +63,11 @@ def console_room_two():
 -----------------------------------
 """)
 
-	direction = input ("Would you like to go back to exit the tardis, or LEFT, FORWARD, or RIGHT?> ")
+	direction = input ("Would you like to go back to EXIT the tardis, or LEFT, FORWARD, or RIGHT?> ")
 	while direction.lower() != "quit":
 		direction = direction.lower()
 		if direction == "back":
-			print("You exit the Tardis. I hope you had fun! Exploring.")
+			print("You exit the Tardis. I hope you had fun exploring!")
 			exit()
 		elif direction == "left":
 			print("You head through a long corridor... ")
