@@ -63,7 +63,7 @@ def console_room_two():
 -----------------------------------
 """)
 
-	direction = input ("Would you like to go back to EXIT the tardis, or LEFT, FORWARD, or RIGHT?> ")
+	direction = input ("Would you like to go BACK to exit the tardis, or LEFT, FORWARD, or RIGHT?> ")
 	while direction.lower() != "quit":
 		direction = direction.lower()
 		if direction == "back":
