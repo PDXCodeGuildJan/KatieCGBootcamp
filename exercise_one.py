@@ -1,8 +1,11 @@
-def practice_work():
+def main():
 	#can be changed to any string
-	string = "Dumbledore!"
+	string = "Katie Is Cool"
 	#calls the mid3 function below, carries string 
 	middle_three_characters(string)
+
+	my_list = ["Mr", "and", "Mrs", "Dursley", "of" "number", "4", "Privet", "Drive"]
+	sequence_printer(my_list)
 
 def middle_three_characters(string):
 	#finds the middle of the string
@@ -19,7 +22,7 @@ def sequence_printer(string):
 	for x in string:
 		print(x)
 
-practice_work()
+main()
 
 
 
