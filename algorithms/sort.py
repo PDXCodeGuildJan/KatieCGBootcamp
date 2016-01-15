@@ -3,15 +3,37 @@
 
 
 #Define selection_sort with the intention of creating the_list
-def selection_sort(the_list):
-	
-	#the loop will go through each unsorted number in the list looking for the smallest number
-	for lowest_number in the_list:
-		"""go through the_list to find lowest_number"""
+def selection_sort(my_list):
 
-		while """the number we're checking""" is > """than the lowest number in in sorted_list but""" < """ and all the numbers in unsorted_list""":
-			"""put that number in the next available spot of the sorted_list """
-			
+	#the loop will go through each unsorted number in the list looking for the smallest number
+	for num in range(len(my_list)):
+		lowest_position = num
+		current_position = num 
+		#while """the number we're checking""" is > """than the lowest number in in sorted_list but""" < """ and all the numbers in unsorted_list""":
+			#"""put that number in the next available spot of the sorted_list """
+		while len(my_list) > current_position:
+			if my_list[lowest_position] > my_list[current_position]:
+				lowest_position = current_position	
+			current_position += 1
+
+		#swap lowest num into first position
+		#three lines of code
+		
+		#Give the smallest number to a new variable
+		holding_cell = my_list[lowest_position]
+		#Swap the number in the spot awaiting the smallest number to the spot where the smallest number was
+		my_list[lowest_position] = my_list[num]
+		#take the smallest number from new variable and put it into the spot we just swapped
+		my_list[num] = holding_cell
+
+
+
+	return my_list
+
+
+sorted_list = selection_sort([1, 5, 10, 2, 7])
+print(sorted_list)
+
 
 
 
@@ -49,7 +71,7 @@ def selection_sort(the_list):
 
 
 	###print(the_list)
-selection_sort([1, 5, 10, 2, 7])
+
 
 
 
