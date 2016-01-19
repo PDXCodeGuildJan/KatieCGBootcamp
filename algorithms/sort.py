@@ -18,7 +18,7 @@ def selection_sort(my_list):
 
 		#swap lowest num into first position
 		#three lines of code
-		
+
 		#Give the smallest number to a new variable
 		holding_cell = my_list[lowest_position]
 		#Swap the number in the spot awaiting the smallest number to the spot where the smallest number was
@@ -30,19 +30,11 @@ def selection_sort(my_list):
 
 	return my_list
 
+finished_sorted_list = selection_sort([1, 5, 10, 2, 7])
+print(finished_sorted_list)
 
-sorted_list = selection_sort([1, 5, 10, 2, 7])
-print(sorted_list)
-
-
-
-
-
-	
-
-
-
-	#the loop will go through each unsorted number in the list looking for the smallest number
+	###########NOTES FOR SELECTION SORT#############
+		#the loop will go through each unsorted number in the list looking for the smallest number
 	
 	#If an unsorted number in the list is smaller than the smallest unsorted number found thus far,
 
@@ -71,42 +63,61 @@ print(sorted_list)
 
 
 	###print(the_list)
+###########END OF NOTES FOR SELECTION SORT#############
+
+
+def bubble_sort(my_list):
+	
+	finished = False
+	
+	while not finished:
+		finished = True
+		current_index = 0
+		next_index = 1
+
+		while current_index < len(my_list) -1:
+
+			if my_list[current_index] > my_list[next_index]:
+				holding_cell = my_list[current_index]
+			#Swap the number in the spot awaiting the smallest number to the spot where the smallest number was
+				my_list[current_index] = my_list[next_index]
+			#take the smallest number from new variable and put it into the spot we just swapped
+				my_list[next_index] = holding_cell
+				finished = False
+
+			current_index += 1
+			next_index += 1
+
+	return my_list
+
+sorted_list = bubble_sort([7, 23, 13, 10, 4, 394])
+print(sorted_list)
+
+
+
+			
+			#would we need to track both numbers/positions????
 
 
 
 
+###########START OF NOTES FOR BUBBLE SORT#############
 
+#every iteration of the list requires one less check, as larger items naturally "sink" to the 
+#bottom and smaller items "bubble" to the top
 
+#objective:
+#Make a loop that will go through each unsorted number in a list looking for the lowest number
+#After going through the entire list, print out the now sorted list from highest to lowest
 
+######
 
+#compare two adjacent numbers in the unordered list in the order they appear
 
+#swap their position if the smallest number of the two is on the left
+#don't swap their position if the smallest of the two is on the right
 
+#print out the new sorted list with the numbers ordered from highest to lowest
 
+###########END OF NOTES FOR BUBBLE SORT#############
 
-
-
-
-"""	unsorted_list = len(the_list)
-	sorted_list = len(the_list+1)"""
-
-
-
-"""while the_list is > 0 :
-
-			#sorted_list = (len(unsorted_list +1"""
-
-
-
-
-"""
-		for lowest_number in the_list:
-			lowest_number = unsorted_list"""
-
-
-
-"""unsorted_list = len
-		sorted_list = len(the_list-1)"""
-
-
-#unsorted_start = 0
-		#while unsorted_start <0:
