@@ -1,8 +1,12 @@
-"""Implements a very simple phonebook using a dictionary"""
+"""Implements a simple phonebook using a dictionary.
+Takes any data given through user input and saves it to
+a .txt file.
+"""
 
 __author__ = "Katie Dover"
 
-#Imports some cool ass colors because FUN!
+# Imports some cool ass colors because FUN!
+import re
 from colorama import Fore, Back, Style
 
 # Initializes our dictionary, which will store our phone numbers
@@ -11,10 +15,14 @@ phonebook = {}
 # Prompts the user to provide a commant to call various functions
 def main():
 	"""The main driver function of our phonebook"""
+	#load any existing data into phonebook
+	load_phonebook()
+
 	print(Back.BLACK + "black background")
 	print(Fore.GREEN + "-----------------------------------------")
 	print("Welcome to your phonebook!")
 	print("""
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMM8.............88DMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMO...................8DMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMM:.......................8MMMMMMD88~........+D88MMMMMMMMMMMMMMMM
@@ -42,7 +50,6 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM888$$$$$$$$OD$,,,,,,,8$$$$8MMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMD88$$$$$$O8I,,8$$$$8MMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM888$$$$8$$$$DMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN88$$ZNMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMM
 """)
 	option = ""
 	
@@ -96,11 +103,32 @@ def add_contact(name, phonenumber):
 	"""Does an addition to a phonebook with the given
 		contact info"""
 
+	# Remove any lingering whitespace that might have been added
+	# During user input
+	regex = "\s+\Z"
+	replacement_string = ""
+	scrubbed_name = re.sub(regex, replacement_string, name)
+
+	# Scrub and reformat the phone number to follow (XXX) XXX-XXXX pattern
+	# Remove all but the numbers
+	regex = "[0-9]+"
+	nums = re.findall(regex, phonenumber)
+	new_num = ""
+	for every_number in nums:
+		new_num += every_number
+
+	# Introduce the correct formatting
+	formatted_num = "(" + new_num[0:3] + ")" + new_num[3:6] + "-" + new_num[6:]
+
+
 	# Adds contact by adding to the dictionary
-	phonebook[name] = phonenumber
+	phonebook[scrubbed_name] = formatted_num
 	print("-----------------------------------------")
-	print("\nNew Contact", name, "was added with number", phonenumber, "\n")
+	print("\nNew Contact", scrubbed_name, "was added with number", formatted_num, "\n")
 	print("-----------------------------------------")
+
+	# Save updated phonebook
+	save_phonebook()
 	
 
 
@@ -112,6 +140,9 @@ def remove_contact(name):
 		print("-----------------------------------------")
 		print("\nYour contact", name, "as been deleted.")
 		print("-----------------------------------------")
+
+		# Save updated phonebook
+		save_phonebook()
 	else: 
 		print("-----------------------------------------")
 		print("\nsorry,", name, "does not exist.")
@@ -124,6 +155,30 @@ def print_phonebook():
 		print("-----------------------------------------")
 		print("\nName:", name, "| Number:", phonebook[name], "\n")
 		print("-----------------------------------------")
+
+def save_phonebook():
+	"""Save the contents of the phonebook to a file."""
+
+	open_file = open("phonebook.txt", "w")
+	open_file.write(str(phonebook))
+	open_file.close()
+
+def load_phonebook():
+	"""load the phonebook data from the save file."""
+	# This function has access to change the global val "phonebook"
+	global phonebook
+
+	# Open the file in write mode first to create it if it doesn't already exist
+	load_file = open("phonebook.txt", "w")
+	load_file.close()
+	
+	# Opening our phonebook.txt file in "read" ("r") mode
+	load_file = open("phonebook.txt", "r")
+	phonebook_data = load_file.read()
+	load_file.close()
+
+	# Convert from string back to dictionary
+	phonebook = eval(phonebook_data)
 
 def search_contact_name(name):
 	
