@@ -16,20 +16,21 @@ def main():
 	print("-------------------------------------------------")
 	print("Welcome to the Morse Code intpreter!")
 	print("-------------------------------------------------")
-	# prompt user for input, either Morse or English, but user can quit
+	# Prompt user for input, either Morse or English, but user can quit
 	prompt = input("Would you like to translate (E)nglish or (M)orse Code? (Q)uit at any time. > ")
 
-	# take the E prompt regardless of case sensitivity
+	# Take the E prompt regardless of case sensitivity
 	if prompt.upper() == "E":
 		print("-------------------------------------------------")
 		message = input("What would you like translated? > ")
 		file_name = input("Please type in the filename and extension you would like to create. >")
-
+		# Call write_code function with user input and file name
 		write_code(message.upper(), file_name)
+		# Tell the user their file has been created.
 		print("-------------------------------------------------")
 		print("Your file has been created.")
 		print("-------------------------------------------------")
-		main()
+
 
 	# take the M prompt regardless of case sensitivity
 	elif prompt.upper() == "M":
@@ -39,8 +40,10 @@ def main():
 		# call function that changes Morse Code into English (below)
 		# carries user input to function and applies case sensitivity exception to variable
 		complete_sentence = read_code(file_name)
+		# Print the decoded message
+		print("-------------------------------------------------")
 		print("Your decoded message: " + complete_sentence)
-		main()
+		print("-------------------------------------------------")
 
 		# handles quit function with goodbye and case sensitivity 
 	elif prompt.upper() == "Q":
@@ -58,10 +61,7 @@ def main():
 def read_code(file_name):
 	"""Take Morse Code message and turn it into English
 	"""
-
-	# Objective: Turn the morse code within the file into English
-
-	# 1. Get the morse code
+	# Get the morse code from a preexisting file
 	load_file = open(file_name, "r")
 	# Get the morse sentence out of the file
 	morse_message = load_file.read()
@@ -70,10 +70,10 @@ def read_code(file_name):
 	# Initialize the english sentence
 	complete_sentence = ""
 	
-	# 2. Split the morse into words depending
+	# Split the morse into words depending
 	# 	on how many spaces each value has between the next value (7 is the key)
-	# Split the sentence into a list of words
 	regex = "\s{7}"
+	# Split the sentence into a list of words
 	list_of_words = re.split(regex, morse_message)
 
 	# Loop through each word
@@ -81,7 +81,7 @@ def read_code(file_name):
 
 		#print("This is a word:", each_word)
 
-		# 3. Split the morse words into lists of morse letters.
+		# Split the morse words into lists of morse letters.
 		regex = "\s{3}"
 		list_of_letters = re.split(regex, each_word)
 
@@ -89,7 +89,7 @@ def read_code(file_name):
 		for each_letter in list_of_letters:
 			#print("This is the letters in the word:", each_letter)
 
-			# 4. Once all values have been grouped appropriately
+			# Once all values have been grouped appropriately
 			# 	Translate the values into their english counterparts
 			for character, code in morse.items():
 				if code == each_letter:
@@ -99,7 +99,7 @@ def read_code(file_name):
 		# Add a space between the words
 		complete_sentence += " "
 
-	# 5. Return the translated message
+	# Return the translated message
 	return complete_sentence
 	
 
@@ -131,13 +131,6 @@ def write_code(message, file_name):
 	load_file = open(file_name, "w")
 	load_file.write(current_sentence)
 	load_file.close()
-
-
-# Call main() at the end of the function to run through program again and again 
-# Until the user decides to quit
-
-
-
 
 
 # Initiates program
