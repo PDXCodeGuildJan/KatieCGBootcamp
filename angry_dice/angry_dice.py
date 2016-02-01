@@ -84,6 +84,7 @@ class Die:
 		self.value = 1
 		self.is_holding = False
 
+
 	def roll(self):
 		"""Randomly roll the die/dice. Can roll two simultaniously or
 			roll one die while holding the other."""
@@ -145,13 +146,9 @@ class Angry_Dice:
 		# 		# Move on to ask what die/dice to hold
 		pass
 
-	def current_round():
-		"""Keeps track of what round the player is on while also
-			keeping track of what values the user needs to roll to move
-			on to the next round."""	
 
 	def die_hold(self, valid, invalid):
-		"""A function to hold die that asks whether or not
+		"""A method to hold a die that asks whether or not
 		the hold is valid or invalid depending on which
 		stage in the game you are on.
 		If invalid, tell the user it is invalid and ask them again.

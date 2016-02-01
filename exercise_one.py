@@ -9,7 +9,7 @@ def main():
 
 def middle_three_characters(string):
 	#finds the middle of the string
-	mid=(len(string)-3)//2
+	mid = (len(string)-3)//2
 	#finds the two letters surrounding it
 	print(string [mid:mid+3])
 

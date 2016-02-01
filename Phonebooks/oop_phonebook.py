@@ -2,6 +2,20 @@
 
 __author__ = "Katie Dover"
 
+import re
+
+def main():
+
+	# Test the Contact and Address classes with Jim Everyperson
+	jim = Contact("Jim", "Everyperson")
+	jim.phone_num = "5416026215"
+	jim.email = "jim@jimail.com"
+	jim.update_address("Home:", city="Portland")
+	jim.update_address("Work:", "34234 Awesome LN", "Bldg G", "Vancouver", "BC", "98374")
+
+	print(jim)
+
+
 class Contact:
 	"""Defines the Contact object to store information about people."""
 
@@ -66,7 +80,7 @@ class Contact:
 			# Format the phone number all pretty
 			self.format_phone_num(self.phone_num)
 			# Add the pretty phone number to the formatted_string
-			formatted_string += "\nPhone: {0}".format(self.formatted_num)
+			formatted_string += "\nPhone: {0}".format(self.phone_num)
 		# If there is an email address
 		if self.email:
 			formatted_string += "\nEmail: {0}".format(self.email)
@@ -109,10 +123,5 @@ class Address:
 
 		return formatted_string
 
-
-
-
-
-
-
-
+if __name__ == '__main__':
+	main()
