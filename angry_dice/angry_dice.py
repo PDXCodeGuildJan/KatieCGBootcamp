@@ -104,7 +104,6 @@ class Die:
 
 	def __str__(self):
 		"""Print out the rolled and held dice, formatted nicely."""
-		
 		return self.possible_values[self.value]
 
 
@@ -119,17 +118,33 @@ class Angry_Dice:
 		self.die_2 = Die()
 		self.current_round = 0
 		self.round_goals = {0:[1,2], 1:[3,4], 2:[5,6]}
+		self.winner = False
+
 		
 
 	def start(self):
 		"""Greets the user, explains the rules, and starts the game"""
-		pass
 
-	def create_dice(self):
-		"""Creates the dice to be "rolled". Six sides, six dice."""
+		print("Rules go here.")
+		print("yayness.")
+		print("I hate this.")
+		input("Press 'S' to start.> ")
+		self.check_stage()
+		self.evaluate_dice()
+
+		while winner = False:
+			self.turn()
+		else: 
 
 
-		pass
+
+	def turn(self):
+		"""Makes a turn method that asks to hold dies"""
+		turn_input = input("What die(s) would you like to hold?> ")
+		die_hold(turn_input)
+
+
+
 
 	def evaluate_dice(self, angry, full_match, reset):
 		"""Evaluates which outcome the roll matches. 
@@ -147,18 +162,44 @@ class Angry_Dice:
 		pass
 
 
-	def die_hold(self, valid, invalid):
+	def die_hold(self, turn_input):
 		"""A method to hold a die that asks whether or not
 		the hold is valid or invalid depending on which
 		stage in the game you are on.
-		If invalid, tell the user it is invalid and ask them again.
+		If invalid, tell the user it is invalid and call the roll function
+		to roll the die for them again.
 		If it is valid, hold the die and roll again."""
+		
+		# If die_1 in turn_input, check valid
+		if die_1 in turn_input:
+			if die_1.value == 6 and round_goals == 2:
+				# INVALID YOU ARE A BOOB
+				print("Invalid. You are a boob. I will roll for you.")
+				roll()
+
+			else:
+				die_1.is_holding = True
+
+		elif die_2 in turn_input:
+			if die_2.value == 6 and round_goals == 2:
+				# INVALID YOU ARE A FECKER NOOB FACE
+				print("Invalid. You are a noob faced loser. I will roll for you.")
+				roll()
+			else:
+				die_2.is_holding = True
+		else:
+			print("That is not valid... that is not... Meh. You suck.")
+			roll()
+
+
+	def check_stage(self):
 		pass
 
 	def winner(self, winning, rounds):
 		"""Evaluates whether the two valid held dice go on to
 		the next round or win the game overall by tracking where
 		the player is in the game, round-wise."""
+		
 		pass
 
 
