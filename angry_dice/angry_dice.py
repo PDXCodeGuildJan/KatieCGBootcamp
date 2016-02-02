@@ -183,7 +183,7 @@ class Angry_Dice:
 		elif die_2 in turn_input:
 			if die_2.value == 6 and round_goals == 2:
 				# INVALID YOU ARE A FECKER NOOB FACE
-				print("Invalid. You are a noob faced loser. I will roll for you.")
+				print("Invalid. You are a noob-faced loser. I will roll for you.")
 				roll()
 			else:
 				die_2.is_holding = True
@@ -193,7 +193,15 @@ class Angry_Dice:
 
 
 	def check_stage(self):
-		pass
+		
+		# Checks to see if the die held or the dice held/rolled are the two 
+		#	values needed to proceed to the next round.
+		if die_1 and die_2 == round_goals[self.current_round]:
+			round += 1
+
+		# If so, stage += 1
+		# If not, stage stays the same.
+		# If stage completed is stage 2(final stage), proceed to winner winner chicken dinner.
 
 	def winner(self, winning, rounds):
 		"""Evaluates whether the two valid held dice go on to
