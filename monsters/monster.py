@@ -2,12 +2,13 @@ from creature import Creature
 
 class Monster(Creature):
 
-	AGRO = "agressive"
+	AGGRO = "agressive"
 	DEFENSE = "defensive"
 
 	def __init__(self):
-		super.__init__(self)
-		self.personality = AGRO
+		# We pass Monster because super represents Creature, Monster represents Monster.
+		super(Monster, self).__init__()
+		self.personality = Monster.AGGRO
 
-		
+
 
