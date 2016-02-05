@@ -1,6 +1,5 @@
 """Dungeon crawler game"""
 
-__author__ = Katie Dover
 
 
 class Creature:
@@ -8,18 +7,18 @@ class Creature:
 		the game will be made from this class. They all come with a name,
 		stats, special abilities, and a weapon."""
 
-		# Constants for the states of all creatures
-		NORMAL = "normal"
-		ASLEEP = "asleep"
-		UNCONS = "unconscious"
-		POISONED = "poisoned"
-		WEAKENED = "weakened"
+	# Constants for the states of all creatures
+	NORMAL = "normal"
+	ASLEEP = "asleep"
+	UNCONS = "unconscious"
+	POISONED = "poisoned"
+	WEAKENED = "weakened"
 
 	def __init__(self):
 		"""Initializes all stats for every creature to be created in the
 			game."""
 		self.name = ""
-		self.state = NORMAL
+		self.state = Creature.NORMAL
 		self.stats = {}
 		self.health = 20
 		self.max_health = 20
