@@ -1,0 +1,145 @@
+/* Source Sans Pro (body?) */
+@import url(https://fonts.googleapis.com/css?family=Nova+Square);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.page-wrapper {
+	background-color: #eeeeee;
+	margin: 0;
+	font-family: 'Nova Square', cursive;
+}
+
+/* Mini CSS Zen Garden header */
+.intro header h1 {
+	color: #e23045;
+	font-size: 2.75em;
+}
+
+/* The Beauty of CSS Design banner */
+.intro header h2 {
+	background-color: #e23045;
+	border-radius: 2px;
+	color: #fff6e0;
+
+}
+
+/* The Road to Enlightment */
+.preamble {
+	background-color: #1b4549;
+	box-shadow: 10px 10px #7ab3b0;
+	color: #fff6e0;
+
+}
+
+
+.main {
+
+
+}
+
+.supporting {
+
+
+}
+
+article p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p a {
+	color: #e23045;
+	text-decoration: none;
+}
+.explanation {
+	background-color: #fff6e0;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1px;
+	border-radius: 2px;
+	box-shadow: 10px 10px #7ab3b0;
+
+}
+
+.participation {
+	background-color: #fff6e0;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1px;
+	border-radius: 2px;
+
+}
+
+footer a {
+	background-color: #908673;
+	color: #fff6e0;
+	text-decoration: none;
+	box-shadow: 10px 10px #d8cfbc;
+}
+
+
+.zen-validate-html {
+
+
+}
+
+.zen-validate-css {
+
+
+}
+
+
+.sidebar {
+
+
+}
+
+
+.wrapper {
+
+
+}
+
+.zen-resources {
+
+
+}
+
+.resources {
+
+
+}
+
+.view-css {
+
+
+}
+
+.css-resources {
+
+
+}
+
+.zen-faq {
+
+
+}
+
+.zen-submit {
+
+
+}
+
+.zen-translations {
+
+
+}
+
+/*  id's  */
+
+/*
+css-zen-garden
+
+zen-supporting
+
+zen-explanation
+
+zen-participation
+*/
