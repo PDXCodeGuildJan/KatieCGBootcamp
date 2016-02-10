@@ -103,7 +103,11 @@ class Angry_Dice:
 		if lets_start.upper() == "S":
 			# We need to make a one off dice roll
 			# Then send that one off to evaluate dice
-			pass
+			while current_round < 4:
+				# loop through
+				# each function
+				# to run through each one
+				# if I can do that...?
 
 		# We can later implement a method or function that 
 		#	can exit the game no matter when the user inputs an "e"
@@ -124,6 +128,7 @@ class Angry_Dice:
 		# 	self.turn()
 		# else: 
 
+		pass
 
 
 	def turn(self):
@@ -158,7 +163,8 @@ class Angry_Dice:
 			# If the user is going OUT of the final round, they win!
 			if self.current_round == 4:
 				# Call the winner method to trigger the winning message!
-				self.winner()
+				# GET RID OF THIS!
+				#self.winner()
 
 	def die_hold(self, turn_input):
 		"""A method to hold a die that asks whether or not
@@ -172,22 +178,29 @@ class Angry_Dice:
 		if die_1 in turn_input:
 			if die_1.value == 6 and round_goals == 3:
 				# INVALID YOU ARE A BOOB
-				print("Invalid. You are a boob. I will roll for you.")
-				roll()
-
-			else:
-				die_1.is_holding = True
+				print("You cannot hold a 6. I will roll for you.")
+				# PHASE OUT THESE MOFOS
+				#roll()
+			elif die_1.value == # Is what's needed for current_round:
+				if # Is valid:
+					die_1.is_holding = True
+					#hold, roll
+				else: #not valid
+					#don't hold, roll
 
 		elif die_2 in turn_input:
 			if die_2.value == 6 and round_goals == 3:
 				# INVALID YOU ARE A FECKER NOOB FACE
-				print("Invalid. You are a noob-faced loser. I will roll for you.")
-				roll()
-			else:
-				die_2.is_holding = True
+				print("You cannot hold a 6. I will roll for you.")
+				# PHASE OUT THESE MOFOS
+				#roll()
+			elif die_2.value == # Is what's needed for current round:
+				if # Is valid:
+					die_2.is_holding = True
 		else:
-			print("That is not valid... that is not... Meh. You suck.")
-			roll()
+			print("Invalid input. Please enter in a number 1-6.")
+			# roll again, but not by calling the roll method
+			#roll()
 
 
 	def check_stage(self):
@@ -205,7 +218,8 @@ class Angry_Dice:
 		# If not, stage stays the same.
 		else:
 			#self.die_hold()
-			self.turn()
+			# PHASE OUT THESE MOFOS
+			#self.turn()
 			# Don't level up
 			### Roll? ###
 
@@ -287,6 +301,7 @@ def test_roll():
 	die_1.value = 3
 	print(die_1)
 	for x in range(2):
+		# PHASE OUT THESE MOFOS
 		die_1.roll()
 		print(die_1)
 
