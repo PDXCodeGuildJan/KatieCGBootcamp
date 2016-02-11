@@ -15,7 +15,7 @@ body {
 /* Center page */
 #css-zen-garden {
 	margin: 0 auto;
-	/*margin: 0 22%;*/
+	/* */
 }
 
 /* aligns all sections properly */
@@ -27,7 +27,8 @@ body {
 /* Main body styling */
 .page-wrapper {
 	/* background color */
-	margin: 6% 12%;
+	margin: 7% 18%;
+	/*12%;*/
 	background-color: #eeeeee;
 	/* sets default font to Nova Square */
 }
