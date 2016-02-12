@@ -6,29 +6,24 @@
 /* Removes white space around border, changes border color, 
 	sets the default font to sans-serif                  */
 body {
-	margin: 0;
-	width: 100%;
 	background-color: #eeeeee;
 	font-family: sans-serif;
 }
 
-/* Center page */
-#css-zen-garden {
-	margin: 0 auto;
-	/* */
-}
 
 /* aligns all sections properly */
 .main {
-	margin-top: 55px;
-	margin-right: 15%;
+	display: inline-block;
+	min-width: 450px;
+	width: 60%;
 }
 
 /* Main body styling */
 .page-wrapper {
 	/* background color */
-	margin: 7% 18%;
-	/*12%;*/
+	margin: 0 auto 40px;
+	min-width: 450px;
+	width: 54%;
 	background-color: #eeeeee;
 	/* sets default font to Nova Square */
 }
@@ -44,7 +39,6 @@ body {
 
 /* -------------------- Header Stying ----------------------*/
 .intro {
-	width: 80%;
 }
 /* Mini CSS Zen Garden header */
 .intro header h1 {
@@ -73,6 +67,7 @@ body {
 	border-radius: 2px;
 	box-shadow: 30px 40px #7ab3b0;
 	color: #fff6e0;
+	margin-bottom: 55px;
 }
 
 /* All headers inside the preamble class */
@@ -135,6 +130,10 @@ p a {
 /* ---------------------- Styles Footer ----------------------*/
 
 /* Styles the HTML/CSS footer */
+footer {
+  text-align: right;
+}
+
 footer a {
 	font-family: sans-serif;
 	display: inline-block;
@@ -160,7 +159,9 @@ footer a {
 
 /* The main class that controls all sidebar characteristics */
 .sidebar {
-	/*margin-left: 60%;*/
+	width: 30%;
+	min-width: 225px;
+	margin-left: 55px;
 	display: inline-block;
 	/*margin-left: 30%;*/
 	vertical-align: top;
@@ -197,32 +198,4 @@ ul {
 /* Hides Resources Title */
 .resources {
 	display: none;
-}
-
-/* The View CSS Button */
-.view-css {
-
-}
-
-/* The CSS Resource Button */
-.css-resources {
-
-
-
-}
-
-/* The Zen FAQ Button */
-.zen-faq {
-
-
-}
-/* The Submit Button */
-.zen-submit {
-
-
-}
-
-/* The Translation Button */
-.zen-translations {
-
 }
