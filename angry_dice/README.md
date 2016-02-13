@@ -1,41 +1,49 @@
-# Angry Dice
-_An assignment to create the game Angry Dice with Python._
+# Introduction
 
-This project allows a user to play Angry Dice in the Terminal.
-The program enforces the rules of the game, progressing through the three stages for the user, and moving them back to Stage 1 when they roll double Angry faces.
+Author: Katie Dover
 
-The full rules of the game are below:
+Welcome to the best Angry Dice game on the web- that is a totally unbiased opinion, by the way! It was created to help solidify the Python conceps I have been learning over the past month. It was also the first program I wrote with Object-Oriented Programming! Hope you enjoy! 
 
-## The Battle
-Players roll their dice at the **same time**, trying to get from 1 to 6 the
-fastest. The first to do so wins!
+### Dependencies
+  - Python 3
+ 
+### Deployment
+1. If you haven't downloaded Python 3 already, do so here: 
+https://www.python.org/downloads/ (3.5.1)
+2. Download the "angry_dice.py" file from the Angry_Dice repo to your Desktop
+3. Open your Terminal and type the following:
+```sh
+$ cd Desktop
+```
+4. Hit ENTER or RETURN; type the folling:
 
-## The Details
-Each player needs two Angry Dice. Players roll their dice, looking to complete
-Stage 1, then Stage 2, then Stage 3. When each Stage is complete, the player
-must declare it out loud.
+```sh
+$ python3 angry_dice.py
+```
+5. You are now able to play Angry Dice! 
 
-### Stage 1
-One die showing 1 pip, another showing 2 pips.
+### But how do I play?!
+#### Angry Dice is a game to be played by yourself or with a partner. 
+	
+Simply roll numbers 1-6 sequentially to win the game. There are three rounds. 
 
-### Stage 2
-One die showing the Angry face (which represents a 3), another showing 4 pips.
+##### Round 1 Goal: roll both a 1 and a 2 to move onto round 2
 
-### Stage 3
-One die showing 5 pips, another showing 6 pips.
+Roll two dice until you roll a 1, a 2, or both a 1 and a 2. Hold one of the dies if you roll a 1 or a 2. Roll the remaining die until you roll a the remaining number you need. When you have both values you need, move on to the next round.
 
-Players do not have to perfectly roll each Stage; if a die shows one face in a
-set, that die is locked (left aside) and the player now rolls the other die
-to complete the set. EXCEPTION: The 6 die face may never be locked!
+If you roll two angry dice, start over! 
+##### Round 2 Goal: Roll both a 3 and an angry die to move onto the final round.
+Very similar to round 1, roll and hold until you have an angry die and a 4. When you have both values you need, move on to the next round.
+	
+If you roll two angry dice, start over!
 
-## The Anger
-If the dice ever show both Angry Faces, the player must START OVER from **Stage 1**.
+##### Round 3 Goal: Roll both a 5 and 6 to win!
 
-## The Victory
-The first player to race through all Stages to reach Stage 3 and announces
-"GET ANGRY!" is declared the victor!
+You may hold a 5, but you may not hold a six. You must either roll a 5 and a 6 simultaniously, or hold a 5 before holding a six. When you have both values you need, your game ends.
 
-## Recommended Dice Formatting
-It's recommended that you present the dice similar to:
-[  4  ] [  :( ]
-This is just a recommendation and you may feel free to present the dice on the screen as you like.
+If you roll two angry dice, start over! 
+
+The first player to get through all three rounds wins!
+
+## Enjoy! 
+

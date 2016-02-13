@@ -57,30 +57,38 @@ def main():
 	\tIf you roll two angry dice, start over.
 \tIf you are playing with a partner, the first player to get through 
 \tall three rounds wins!""")
-
+	
+	# Start the game out or quit
 	lets_start = input("Press 'S' to start, 'E' to exit. Good luck!> ")
-
+	# If unput is an "S":
 	if lets_start.upper() == "S":
 		# Roll dice to start game off
 		game.die_1.roll()
 		game.die_2.roll()
 		# While the current round of the current game is less than 4:
 		while game.current_round < 4:
-			# Print out the current round of current game
-			print(game.current_round)
 			# Print out current die 1
 			print(game.die_1)
 			# Print out current die 2
 			print(game.die_2)
 			# Call turn method 
 			game.turn()
-
+			# Call check_stage method
 			game.check_stage()
+			# Print out the current round of current game
+			print(game.current_round)
+		else:
+			# If the player wins, print out final two dice
+			print(game.die_1)
+			print(game.die_2)
 
-		# We can later implement a method or function that 
+		# TODO: implement a method or function that 
 		#	can exit the game no matter when the user inputs an "e"
 	elif lets_start.upper() == "E":
 		exit()
+	else: 
+		print("Invalid input! Please try again.")
+		main()
 	
 
 class Angry_Dice:
@@ -96,14 +104,16 @@ class Angry_Dice:
 		self.die_2 = Die()
 		# Sets the current round at 1 to start out
 		self.current_round = 1
-
-		
+		# Creates a dict of rounds with a list of each goal 
+		self.round_goals = {1:[1,2], 2:[3,4], 3:[5,6]}
 
 
 	def turn(self):
 		"""Makes a turn method that asks to hold dies"""
+		
 		# Asks the user which die/dice they'd like to hold
 		turn_input = input("Would you like to hold die A or B or roll?> ")
+		
 		# Call the die_hold method while passing the user input held in the
 		#	turn_input variable
 		if turn_input.lower() == 'a':
@@ -111,9 +121,10 @@ class Angry_Dice:
 		elif turn_input.lower() == 'b':
 			self.die_hold(turn_input)
 
+		# If die 1 has not been held, just roll again: 	
 		if self.die_1.is_holding == False:
 			self.die_1.roll()
-
+		# If die 2 has not been held, just roll again:
 		if self.die_2.is_holding == False:
 			self.die_2.roll()
 
@@ -126,24 +137,32 @@ class Angry_Dice:
 		to roll the die for them again.
 		If it is valid, hold the die and roll again."""
 		
-		# If die_1 in turn_input, check valid
+		# If the user input from turn method is an "a":
 		if turn_input.lower() == 'a':
-			if self.current_round == 1 and (self.die_1.value == 1 or self.die_1.value == 2):
-				self.die_1.is_holding = True
-			elif self.current_round == 2 and (self.die_1.value == 3 or self.die_1.value == 4):
-				self.die_1.is_holding = True
-			elif self.current_round == 3 and (self.die_1.value == 5 or self.die_1.value == 6):
-				self.die_1.is_holding = True
+			# And if the die 1 value is a round goal of the current round:
+			if self.die_1.value in self.round_goals[self.current_round]:
+				# Print out the die 1 value
+				print(self.die_1.value)
+				# And if the value of die one is a 6:
+				if self.die_1.value == 6:
+					print("You can't hold a six! I'll just roll it for you")
+					# You cannot hold a six, just roll again
+					self.die_1.roll()
+				# Af if the value of die one is not a 6, the die has been held
+				else:
+					self.die_1.is_holding = True
+			# But if the die 1 value is not a round goal of the current round:
 			else:
 				print("You cannot hold a {}. I will roll for you.".format(self.die_1.value))
-
+		# Or if the user input is a "b":
 		elif turn_input.lower() == 'b':
-			if self.current_round == 1 and (self.die_2.value == 1 or self.die_2.value == 2):
-				self.die_2.is_holding = True
-			elif self.current_round == 2 and (self.die_2.value == 3 or self.die_2.value == 4):
-				self.die_2.is_holding = True
-			elif self.current_round == 3 and (self.die_2.value == 5 or self.die_2.value == 6):
-				self.die_2.is_holding = True
+			if self.die_2.value in self.round_goals[self.current_round]:
+				print(self.die_1.value)
+				if self.die_2.value == 6:
+					print("You can't hold a 6! I'll just roll it for you.")
+					self.die_2.roll()
+				else:
+					self.die_2.is_holding = True
 			else:
 				print("You cannot hold a {}. I will roll for you.".format(self.die_2.value))
 
@@ -152,52 +171,27 @@ class Angry_Dice:
 	def check_stage(self):
 		"""Checks to see if the die/dice rolled change the round to either 
 			go up a stage, or go back to stage one.""" 
-		# If the value of die_1 is a goal of the current round, and die_2 is a goal of the current round:
-		# if self.die_1.value in self.round_goals[self.current_round] and self.die_2.value in self.round_goals[self.current_round]:
-		# 	# As long as they're not the same number...
-		# 	if self.die_1.value != self.die_2.value:
-		# 		# If so, stage += 1
-		# 		print("You've gone up a level!")
-		# 		self.current_round += 1
-		# 		self.die_1.is_holding = False
-		# 		self.die_2.is_holding = False
 
-		if self.current_round == 1:
-			if (self.die_1.value == 1 or self.die_1.value == 2) and (self.die_2.value == 1 or self.die_2.value == 2) and (self.die_1.value != self.die_2.value):
-				print("You've gone up a level!")
-				self.current_round = 2
-				self.die_1.is_holding = False
-				self.die_2.is_holding = False
-
-		elif self.current_round == 2:
-			if (self.die_1.value == 3 or self.die_1.value == 4) and (self.die_2.value == 3 or self.die_2.value == 4) and (self.die_1.value != self.die_2.value):
-				print("You've gone up a level!")
-				self.current_round = 3
-				self.die_1.is_holding = False
-				self.die_2.is_holding = False
-
-		elif self.current_round == 3:
-			if (self.die_1.value == 5 or self.die_1.value == 6) and (self.die_2.value == 5 or self.die_2.value == 6) and (self.die_1.value != self.die_2.value):
-				print(game.die_1)
-				print(game.die_2)
-				self.winner()
+		# If the value of die 1 is in around goal of the current round, and if the val of die 2 is in a round goal of the current round, and the val of die 1 is not the val of die 2:
+		if (self.die_1.value in self.round_goals[self.current_round]) and (self.die_2.value in self.round_goals[self.current_round]) and (self.die_1.value != self.die_2.value):
+			# The player has now gone up a level! 
+			print("You've gone up a level!")
+			# The current round is bumped up by one
+			game.current_round += 1
+			# The holding method for both dice is now reset to false
+			self.die_1.is_holding = False
+			self.die_2.is_holding = False
 				
-
+		# Or if the value of die one is 3 and the value of die two is 3:
 		elif self.die_1.value == 3 and self.die_2.value == 3:
+			# The dice are angry!!!
 			print("Two angry!!!! Back to round one!!!")
+			# The player's round is back to one
 			self.current_round = 1
+			# The holding method for both fice is now reset to false
 			self.die_1.is_holding = False
 			self.die_2.is_holding = False
 
-
-
-		# If not, stage stays the same.
-		# else:
-			#self.die_hold()
-			# PHASE OUT THESE MOFOS
-			#self.turn()
-			# Don't level up
-			### Roll? ###
 
 	def winner(self):
 		"""Winner method to tell the user they've won!"""
@@ -255,15 +249,18 @@ class Die:
 		}
 	
 	def __init__(self):
+		# Sets the default value of the dice to one
 		self.value = 1
+		# Sets the holding to default to False
 		self.is_holding = False
 
 
 	def roll(self):
 		"""Randomly roll the die/dice. Can roll two simultaniously or
 			roll one die while holding the other."""
-
+		# Using randint, roll a random value between 1 and 6
 		self.value = randint(1, 6)
+		# Return the random value generated
 		return self.value
 
 
