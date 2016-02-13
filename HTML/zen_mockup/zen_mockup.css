@@ -38,8 +38,7 @@ body {
 */
 
 /* -------------------- Header Stying ----------------------*/
-.intro {
-}
+
 /* Mini CSS Zen Garden header */
 .intro header h1 {
 	color: #e23045;
@@ -56,7 +55,8 @@ body {
 	border-radius: 2px;
 	font-family: 'Nova Square', cursive;
 	color: #fff6e0;
-	padding-left: 4px;
+	padding: 3px;
+
 }
 
 /* ------------------- Blue Box Styling ---------------------*/
@@ -87,6 +87,7 @@ article p {
 	font-size: 16px;
 }
 
+/* Changes all header3 font & margin */
 h3 {
 	font-family: 'Nova Square', cursive;
 	margin-left: 10px;
@@ -105,8 +106,6 @@ h3 {
 	box-shadow: 30px 35px #7ab3b0;
 	display: inline-block;
 	margin-bottom: 10px;
-
-
 }
 
 /* ---------------- Styles Second Tan Box -------------------*/
@@ -135,6 +134,7 @@ footer {
   text-align: right;
 }
 
+/* Styles footer anchor tags */
 footer a {
 	font-family: sans-serif;
 	display: inline-block;
