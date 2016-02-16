@@ -23,7 +23,12 @@ class Guess:
 class HintPeg:
 
 	def __init__():
-		peg_type = str #CONST
+		peg_type = "" #CONST
+
+class ColorPeg:
+	
+	def __init__():
+		peg_color = "" #CONST
 
 class MasterView:
 
