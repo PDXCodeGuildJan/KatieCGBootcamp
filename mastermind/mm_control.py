@@ -12,22 +12,25 @@ class MasterMind:
 		"""Randomly selects four colors from color list"""
 
 		num_to_select = 4
+		peg_color_list = []
 
 		#write a for loop to set a loop to select 4 colors from SOLUTION in mm_model
 		for i in range(num_to_select): #use X since it is needed to get the loop to run
 			color = random.choice(mm_model.MasterModel.COLORS)
 
-			#make the color a peg
-			#peg = color
+			#make pegs with the colors
+			peg = mm_model.ColorPeg(color)
 
 			#append the peg to make a list of pegs of no more than 4
-			pegcolorlist = mm_model.ColorPeg.PEGCOLOR.append(color)
+			peg_color_list.append(peg)
 
 		
 
 			print(i)
 			print(color)
-			print (pegcolorlist)
+		print (peg_color_list)
+		for peg in peg_color_list:
+			print(peg.peg_color)
 
 
 

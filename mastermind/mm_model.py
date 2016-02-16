@@ -15,12 +15,11 @@ class Guess:
 		self.hint_response = {[HintPeg]}
 
 		pass
-class ColorPeg:
 
-	PEGCOLOR = []
+class ColorPeg:
 	
 	def __init__(self, color):
-		peg_color = color
+		self.peg_color = color
 	
 	pass
 
