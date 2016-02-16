@@ -1,6 +1,8 @@
 import mm_view
 import mm_model
 import random
+def main():
+	pass
 
 class MasterMind:
 	def __init__(self):
@@ -16,13 +18,16 @@ class MasterMind:
 			color = random.choice(mm_model.MasterModel.COLORS)
 
 			#make the color a peg
-			# PEGCOLOR = [color.append]
+			#peg = color
 
 			#append the peg to make a list of pegs of no more than 4
+			pegcolorlist = mm_model.ColorPeg.PEGCOLOR.append(color)
+
 		
 
 			print(i)
 			print(color)
+			print (pegcolorlist)
 
 
 
@@ -47,9 +52,13 @@ class MasterMind:
 	def exit(self, show_exit):
 		pass
 
-this = MasterMind()
-this.color_picker()
+if __name__ == '__main__':
+	# main()
 
+	this = MasterMind()
+	this.color_picker()
+
+	# mm_view.MasterView.show_start()
 
 
 
