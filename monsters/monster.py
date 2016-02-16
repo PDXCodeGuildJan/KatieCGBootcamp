@@ -9,6 +9,7 @@ class Monster(Creature):
 		# We pass Monster because super represents Creature, Monster represents Monster.
 		super(Monster, self).__init__()
 		self.personality = Monster.AGGRO
+		
 
 
 
