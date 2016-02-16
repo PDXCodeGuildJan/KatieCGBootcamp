@@ -2,6 +2,8 @@
 
 __author__ = "Katie Dover"
 
+import random
+
 def main():
 	pass
 
@@ -9,7 +11,7 @@ def main():
 class MasterModel:
 
 	def __init__():
-		self.solution = []
+		self.solution = ["Blu", "Blk", "Yel", "Red", "Grn", "Wte"]
 		self.past_guesses = {[]}
 		self.status = 1
 
@@ -71,9 +73,13 @@ class MasterView:
 
 class MasterMind:
 
-	def solution_picker():
-		pass
-	
+	def solution_picker(solution):
+
+		self.num_to_select = 4
+		self.random_solution = random.sample(self.solution, self.num_to_select)
+		return self.random_solution
+
+		
 	def start_game(show_start):
 		pass
 	
@@ -88,6 +94,9 @@ class MasterMind:
 
 	def exit(show_exit):
 		pass
+
+	def __str__():
+
 
 	
 	
