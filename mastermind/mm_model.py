@@ -6,8 +6,10 @@ class MasterModel:
 
 	def __init__():
 		
-		self.past_guesses = {} # To be a dictionary of lists
+		self.guesses = {} # To be a dictionary of guess objects. Key: int(1-10) 
+							# Value: Guess object
 		self.status = 1
+
 
 class Guess:
 	"""for creation and storage of user guess and response objects"""
@@ -17,13 +19,15 @@ class Guess:
 
 		pass
 
+class ColorPegGuess:
+	"""This is a creation of storage for current and past guesses"""
+	pass
+
 class ColorPeg:
-	"""for creation and storage of colorpeg objects"""
+	"""for creation and storage of colorpeg objects for color picker"""
 	
 	def __init__(self, color):
-		self.Mpeg_color = color
-	
-	pass
+		self.peg_color = color
 
 class HintPeg:
 	"""for creation and storage of hint peg responses"""

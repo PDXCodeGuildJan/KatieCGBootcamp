@@ -41,10 +41,18 @@ class MasterMind:
 		
 
 	
-	def Guess(input_guess):
+	def Guess(self):
 		""" is the logic that gets user to create a guess, then assigns that guess to peg objects,
 		so that guess can be evaluated against color_picker (def eval guess) and called again as part of def big display."""
+		guess_colors = MasterView.input_guess.guess_input()
+		# Convert guess_input into a list- each color being a string
 
+		# Convery new list of strings into a list of peg objects(peg_1, peg_2, peg_3, peg_4)
+
+		# Plug our peg objects into our guess object
+
+		# Store guess object in our MasterModel
+		
 		pass
 
 	def eval_guess(self, color_picker, imput_guess):
