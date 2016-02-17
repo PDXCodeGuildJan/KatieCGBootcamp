@@ -1,6 +1,6 @@
 """Mastermind game"""
 
-__author__ = "Katie Dover"
+__author__ = "Katie Dover, Gabriel Key"
 
 import random
 

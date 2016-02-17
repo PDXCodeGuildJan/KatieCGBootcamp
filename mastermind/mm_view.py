@@ -6,18 +6,23 @@ class MasterView:
 
 
 	def show_curr_guess():
+		"""displays the current guess, is a part of big display"""
 		pass
 
 	def show_past_guess(guess_response):
+		"""shows players past guesses"""
 		pass
 	
 	def show_status(eval_status):
+		""" shows players current status a.k.a. round """
 		pass
 	
 	def show_pegs(guess_response):
+		"""shows black and white pegs as part of big display"""
 		pass
 	
-	def show_solution(solution_picker):
+	def show_solution(color_picker):
+		"""shows colors chosen as part of color_picker to player at end of game, exit, or win. """
 		pass
 	
 	def show_rules():
@@ -49,16 +54,26 @@ If you'd like to play, press (S). If you'd like to exit, press (E).""")
 		pass
 	
 	def show_win():
+		"""display to user when user wines"""
 		pass
 	
 	def show_lose():
+		"""display to user when user looses"""
 		pass
 	
 	def show_exit():
+		"""display to user when exit option is selected at any point in the game."""
 		pass
 	
 	def input_guess():
+		"""receives input from user to create their guess for each round"""
 		pass
 	
 	def big_display(show_past_guess, show_status, show_pegs, show_curr_guess):
+		"""combines all above infomation into cohsieve display to user."""
 		pass
+
+
+
+
+
