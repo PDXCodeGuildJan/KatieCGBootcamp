@@ -18,7 +18,12 @@ class Guess:
 	def __init__(self, peg_list):
 		#self.hint_response = {[HintPeg]}
 		self.pegs = peg_list 
-		
+	
+	def __str__(self):
+		new_string = ""
+		for x in self.pegs:	
+			new_string += str(x)
+		return new_string
 
 class ColorPegGuess:
 	"""This is a creation of storage for current and past guesses"""
@@ -30,6 +35,8 @@ class ColorPeg:
 	def __init__(self, color):
 		self.peg_color = color
 	
+	def __str__(self):
+		return self.peg_color
 
 class HintPeg:
 	"""for creation and storage of hint peg responses"""
