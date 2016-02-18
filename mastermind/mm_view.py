@@ -25,11 +25,11 @@ class MasterView:
 		"""shows colors chosen as part of color_picker to player at end of game, exit, or win. """
 		pass
 	
-	def show_rules():
+	def show_rules(self):
 		"""Shows the user all Mastermind rules at any time during game play."""
 		pass
 	
-	def show_start():
+	def show_start(self):
 		"""Include an option to see the rules at any time during game play. Calls the show_rules method."""
 		start_input = input(
 
@@ -40,16 +40,16 @@ class MasterView:
 \____|__  (____  /____  > |__|  \___  >__|  |__|_|  /__|___|  /\____ | 
         \/     \/     \/            \/            \/        \/      \/ 
 If you'd like to play, press (S). If you'd like to exit, press (E).""")
-		if start_input == "S":
-				print("LIST ALL OF THE RULES HERE.")
 
-		elif start_input == "E":
+
+		if start_input.lower() == "S":
+			print("LIST ALL OF THE RULES HERE.")
+
+		elif start_input.lower() == "E":
 			print("Sad to see you go! Goodbye.")
 			exit()
 		else:
 			print("That is not a valid input.")
-
-			)
 
 		pass
 	
@@ -69,7 +69,7 @@ If you'd like to play, press (S). If you'd like to exit, press (E).""")
 		"""receives input from user to create their guess for each round"""
 		guess_input = input("""Please pick the four colors you'd like to guess for this round. 
 Your color options are: "Blu" for Blue, "B" for Black, "Y" for Yellow, "R" for Red, "G" for Green, and "W" for White.
-Remember: Type them in the order of your guess using a space to separate each color.""")
+Remember: Type them in the order of your guess with a comma between each color.""")
 		# This list is passed to the controller and used in Guess
 
 	

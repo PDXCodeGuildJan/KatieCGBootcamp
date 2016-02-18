@@ -4,20 +4,21 @@ class MasterModel:
 
 	COLORS = ["Blu", "Blk", "Yel", "Red", "Grn", "Wte"]
 
-	def __init__():
+	def __init__(self):
 		
 		self.guesses = {} # To be a dictionary of guess objects. Key: int(1-10) 
 							# Value: Guess object
 		self.status = 1
 
+	"""need a place to store solution, could this be in the dictionary
+	we are making for storing user guesses?"""
 
 class Guess:
 	"""for creation and storage of user guess and response objects"""
-	def __init__():
-		self.user_guess = {[eval_guess]}
-		self.hint_response = {[HintPeg]}
-
-		pass
+	def __init__(self, peg_list):
+		#self.hint_response = {[HintPeg]}
+		self.pegs = peg_list 
+		
 
 class ColorPegGuess:
 	"""This is a creation of storage for current and past guesses"""
@@ -28,6 +29,7 @@ class ColorPeg:
 	
 	def __init__(self, color):
 		self.peg_color = color
+	
 
 class HintPeg:
 	"""for creation and storage of hint peg responses"""
@@ -38,4 +40,5 @@ class HintPeg:
 		peg_type = "" #CONST
 
 	pass
+
 
