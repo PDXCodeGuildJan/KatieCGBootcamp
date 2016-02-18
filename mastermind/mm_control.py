@@ -34,17 +34,17 @@ class MasterMind:
 
 		#write a for loop to set a loop to select 4 colors from SOLUTION in mm_model
 		for i in range(num_to_select): #use i just to run the loop, variable is not used elsewhere 
-			print(i)
+			# print(i)
 			color = random.choice(MasterModel.COLORS)
-			print(color)
+			# print(color)
 			#associate color with peg objects
 			peg = ColorPeg(color)
 
 			#append the peg_color list to make a list of peg objects 
 			peg_color_list.append(peg)
-			print (peg_color_list)
-			#create object for solution so it can be stored in model.py
-
+			# print (peg_color_list)
+		
+		#create object for solution so it can be stored in model.py
 		solution = Guess(peg_color_list)
 
 		#put solution into the self.guesses in the model
@@ -63,28 +63,42 @@ class MasterMind:
 		""" is the logic that gets user to create a guess, then assigns that guess to peg objects,
 		so that guess can be evaluated against color_picker (def eval guess) and called again as part of def big display."""
 		
-		print("hello world")
+		peg_guess_color_list = []
 		guess_input = self.view.input_guess()
-
 
 		# Convert guess_input into a list- each color being a string
 		guess_color_list = re.split(",", guess_input)
 		
+
 		for each_color in guess_color_list:
+
+			### TESTS ###
 			print ("This is each color: ", each_color)
-			print ("print guess input again: ", guess_input)
+			# print ("print guess input again: ", guess_input)
 
 			#associate each string with a peg object
-			#peg = ColorPeg
-
+			peg_guess = ColorPeg(each_color)
+			print("prints each peg color for guess: ", peg_guess)
+			
 			# make a list of the objects
-			#guess_colors_list.append()
+			# Append the peg_guess color list to make a list of peg guess objects
+			
+			peg_guess_color_list.append(peg_guess)
 
-		# Plug our peg objects into our guess object
+			# Plug our peg objects into our guess object
+			guess = Guess(peg_guess_color_list)
 
-		# Store guess object in our MasterModel
-		
-		pass
+			# Store guess object in our MasterModel
+			self.model.guesses["Guess 1"] = guess
+
+
+		### TESTS ###
+		print("Prints the list of color guesses: ", peg_guess_color_list)
+		for peg_guess in peg_guess_color_list:
+			print("Prints the list of guess pegs: ", peg_guess.peg_color)
+
+		print("Prints out the first list of guesses. Key = Guess 1", self.model.guesses["Guess 1"])
+
 
 	def eval_guess(self, color_picker, imput_guess):
 		"""evaluates input received from player against color_picker to determine win / true vs no win / false."""
