@@ -16,7 +16,7 @@ class MasterModel:
 class Guess:
 	"""for creation and storage of user guess and response objects"""
 	def __init__(self, peg_list):
-		#self.hint_response = {[HintPeg]}
+		self.hint_response = []
 		self.pegs = peg_list 
 	
 	def __str__(self):
