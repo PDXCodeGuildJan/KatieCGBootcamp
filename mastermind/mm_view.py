@@ -65,14 +65,16 @@ If you'd like to play, press (S). If you'd like to exit, press (E).""")
 		"""display to user when exit option is selected at any point in the game."""
 		pass
 	
-	def input_guess():
+	def input_guess(self):
 		"""receives input from user to create their guess for each round"""
-		guess_input = input("""Please pick the four colors you'd like to guess for this round. 
-Your color options are: "Blu" for Blue, "B" for Black, "Y" for Yellow, "R" for Red, "G" for Green, and "W" for White.
-Remember: Type them in the order of your guess with a comma between each color.""")
+# 		guess_input = input("""Please pick the four colors you'd like to guess for this round. 
+# Your color options are: "Blu" for Blue, "B" for Black, "Y" for Yellow, "R" for Red, "G" for Green, and "W" for White.
+# Remember: Type them in the order of your guess with a comma between each color.""")
 		# This list is passed to the controller and used in Guess
+		guess_input = "blu,b,Y,r"
+		return guess_input
 
-	
+
 	def big_display(show_past_guess, show_status, show_pegs, show_curr_guess):
 		"""combines all above infomation into cohsieve display to user."""
 		pass

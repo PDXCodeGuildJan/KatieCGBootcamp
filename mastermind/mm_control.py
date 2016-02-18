@@ -1,6 +1,7 @@
 from mm_view import MasterView 
 from mm_model import MasterModel, Guess, ColorPeg, HintPeg
 import random
+import re
 
 
 def main():
@@ -8,8 +9,8 @@ def main():
 
 	this = MasterMind()
 	this.color_picker()
+	
 	this.guess()
-
 
 
 	#this.view.show_start()
@@ -63,15 +64,15 @@ class MasterMind:
 		so that guess can be evaluated against color_picker (def eval guess) and called again as part of def big display."""
 		
 		print("hello world")
-		guess_colors = MasterView.input_guess.guess_input()
-		guess_colors_list = []
+		guess_input = self.view.input_guess()
 
 
 		# Convert guess_input into a list- each color being a string
-		guess_color_list_test = re.split(",", guess_colors)
+		guess_color_list = re.split(",", guess_input)
 		
-		for each_color in guess_color_list_test:
-			print ("Ths splits: ", guess_colors.split)
+		for each_color in guess_color_list:
+			print ("This is each color: ", each_color)
+			print ("print guess input again: ", guess_input)
 
 			#associate each string with a peg object
 			#peg = ColorPeg
