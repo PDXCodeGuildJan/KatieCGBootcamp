@@ -96,23 +96,51 @@ class MasterMind:
 		# print("Prints out the first list of guesses. Key = Guess 1", self.model.guesses["Guess 1"])
 
 
-	def eval_guess(self, color_picker, imput_guess):
+	def win_check(self, color_picker, imput_guess):
 		"""evaluates input received from player against color_picker to determine win / true vs no win / false."""
+
+		# retrieve peg_guess_color_list for current round
+
+		# retreive solution list
+
+		# compare values in each index for both lists against eachother
+
+		# if all values in each list match eachother, produce a true value and prompt win
+
+		# if any of the values in each list do not match, produce a false value and promopt check_status method 
 		pass
 
-	def eval_status(self, input_guess, status):
-		"""Evaluates where player is in the game, the "round", if 10 or more rounds = player looses; if 9 or less, player guess again """
+	def check_status(self, win_check, model.status):
+		"""checks status or round for player, if round is => 10, prompt loose, if round is <= 9, prompt eval_status"""
 
+		# retreives false value from win_check
+
+		# compare against current status, 
+
+		# if status is >= 10 prompt loose
+
+		# if status is <= 9, prompt eval guess
 
 		pass
 	
-	def guess_response(self, Guess):
+	def eval_guess(self, Guess):
 		"""response to user guess after check status and status is less than or equal to 9, produces 'big-display' to update
 		player on their status, pins and pegs, etc. """
 
+		# pulls comparison from win check and assigns peg responses 
+
+		# returns a list to be in hint_response
+
+		# displays as part of big display in view.
 
 		pass
 	
+	def round_advance(self):
+		"""advances round counter by one"""
+
+		# takes current round and advances it by one.
+
+		pass
 
 	def exit(self, show_exit):
 		"An exit function that will be avialable to players throughout all parts of the game."
