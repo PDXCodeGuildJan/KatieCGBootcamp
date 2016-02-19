@@ -1,5 +1,9 @@
 """Dungeon crawler game"""
 
+class Weapon:
+	"""Weapon objects that creatures can equip."""
+	def __init__(self, atk_value):
+		self.base_damage = atk_value
 
 
 class Creature:
@@ -28,8 +32,16 @@ class Creature:
 	
 
 	def attack(self):
-		""""""
-		pass
+		"""Return the attack value of of the creature, given its 
+		base attack value, Weapon attack value, and state."""
+		# Set the attack value to the base attack amount
+		atk_value = self.attack_points
+		# If we have a weapon, add the weapon's damage to atk_value
+		if self.weapon:
+			atk_value += self.weapon.base_damage
+
+		# Return the total calculated damage
+		return atk_value
 
 	def heal(self, heal_amount):
 		""""""
@@ -50,3 +62,4 @@ class Creature:
 	def change_state(self, new_state):
 		""""""
 		pass
+
