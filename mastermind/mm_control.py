@@ -84,6 +84,8 @@ class MasterMind:
 			# Store guess object in our MasterModel
 			self.model.guesses["Guess 1"] = user_guess
 
+			# Make a variable that
+
 
 		# ### TESTS ###
 		# print ("This is each color: ", each_color)
@@ -110,7 +112,7 @@ class MasterMind:
 		# if any of the values in each list do not match, produce a false value and promopt check_status method 
 		pass
 
-	def check_status(self, win_check, model.status):
+	def check_status(self, win_check, model_status):
 		"""checks status or round for player, if round is => 10, prompt loose, if round is <= 9, prompt eval_status"""
 
 		# retreives false value from win_check
@@ -139,8 +141,11 @@ class MasterMind:
 		"""advances round counter by one"""
 
 		# takes current round and advances it by one.
+		if self.model.status <= 9:
+			
+			self.model.status += 1	
 
-		pass
+	
 
 	def exit(self, show_exit):
 		"An exit function that will be avialable to players throughout all parts of the game."
