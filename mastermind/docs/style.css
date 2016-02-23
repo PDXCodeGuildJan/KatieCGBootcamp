@@ -1,0 +1,47 @@
+/**
+ * Styles for the Python Docs that are auto-generated.
+ * To apply them to your docs, simply add the following
+ * line to the page's head.
+ * <link rel="stylesheet" type="text/css" href="style.css" />
+**/
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+table {
+    border-collapse: separate;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f3f0f0;
+    box-shadow: 2px 2px 5px #ccc;
+}
+big {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+td a {
+    color: #550527;
+}
+
+td {
+    padding: 5px 5px 5px 10px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+tbody tr:first-child a{
+    color: #fff;
+}
+
+dt a {
+    color: #A10702;
+    text-decoration: none;
+}
+
+dt a:hover {
+    text-decoration: underline;
+}
