@@ -23,13 +23,16 @@ function loopClick() {
 };
 // Create a function called dice
 function dice() {
-
+	// Create varaible roll to take in the value given to the inputField
 	var roll = inputField.value;
+	// Clears the list of numbers every time you enter in a new number into the inputField 
 	counter.innerHTML = "";
-	
+	// for (every index while the index is less than the number given, increment and loop through...) 
 	for (var i=0; i < roll; i++) {	
-		
+		// create variable randnum to hold a random number from 1-6 (ceil rounds up, random gives a random
+			// number between 0-1, hence the need for *6)
 		var randNum = Math.ceil(Math.random() * 6);  
+		// display each random die side using one of the six inported die images!
 		counter.innerHTML += "<img src='dice/" + randNum + ".png' alt='A die.'/><br/>";
 
 
