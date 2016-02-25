@@ -11,9 +11,6 @@ var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
 
-
-
-
 /* Add the item in the text fields to the inventory
  * list, which is stored inside the table body (id="inventory")
  */
@@ -88,7 +85,7 @@ function addStock() {
 	// Create an empty array to put the checked boxes in
 	var boxesChecked = [];
 	// for each index in getBoxes...
-	for (var i=0; i<getBoxes.length; i++) {
+	for (var i = 0; i < getBoxes.length; i++) {
 
 		if (getBoxes[i].checked) {
 			boxesChecked.push(getBoxes[i]);
