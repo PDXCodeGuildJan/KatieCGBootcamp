@@ -65,20 +65,17 @@ function addItem() {
  */
 function removeStock() {
 	// Get all checked stock boxes 
-	var getRemoveBoxes = document.querySelectorAll('.stock');
-	console.log("This should print out all stock listed:", getRemoveBoxes)
+	var getRemoveBoxes = document.querySelectorAll("tbody > tr >td > input:checked");
 
-	var boxesChecked = [];
 
-	for (var i=0; i<getRemoveBoxes.length; i++) {
-		if (getRemoveBoxes[i].checked) {
-			boxesChecked.push(getRemoveBoxes[i]);
-		};
+	for (var i = 0; i < getRemoveBoxes.length; i++) {
+		var status = getRemoveBoxes[i].parentNode.parentNode.children[3];
+
+		status.textContent = "No";
+
+		status.className = "false";
 	};
-	console.log("This will be all checked boxes: ", boxesChecked);
-}; 
-
-
+};
 
 /* Toggles the inStock status on the selected 
  * rows inside of inventory to "Yes"
@@ -87,7 +84,7 @@ function addStock() {
 
 	// Find all selected boxes 
 	var getBoxes = document.getElementsByClassName("stock");
-	console.log("this is a list of all boxes: ", getBoxes);
+	// console.log("this is a list of all boxes: ", getBoxes);
 	// Create an empty array to put the checked boxes in
 	var boxesChecked = [];
 	// for each index in getBoxes...
@@ -95,17 +92,21 @@ function addStock() {
 
 		if (getBoxes[i].checked) {
 			boxesChecked.push(getBoxes[i]);
+		}
+	}
 
-		};
-	};	
-	console.log("this will be all checked boxes: ", boxesChecked);
+	for (var i = 0; i < boxesChecked.length; i++) {
 
-	// X Have a list of all boxes print in the console
+		var status = boxesChecked[i].parentNode.parentNode.lastChild;
+
+		status.textContent = "Yes";
+
+		status.className = "true";
+	}
 
 
-	// Change their in-stock value
+	// console.log("this will be all checked boxes: ", boxesChecked);
 
-	// Update the display???
 };
 
 
