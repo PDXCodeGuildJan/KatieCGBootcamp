@@ -60,6 +60,28 @@ class CheckStatustest (unittest.TestCase):
 		self.assertEqual(True, self.master.check_status(), "if level is 9 or lower prompt you loose")
 
 
+class CompareForWin(unittest.TestCase):
+
+	def setUp(self):
+
+		self.master = MasterMind()
+
+	def tearDown(self):
+
+		del self.master
+
+
+	def test_compare_win(self):
+
+		# Create an instance of a hard coded guess
+		self.master.model.Guess = ["y,b,r,y"]
+		# Create an instance of a hard coded solution
+		self.master.color_picker.solution = ["y,b,r,y"]
+		# Verify T/F output by comparing object with self.assertEqual
+		self.assertEqual(True, self.master.win_check(), "if both lists match")
+
+
+
 
 
 
