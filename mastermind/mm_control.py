@@ -101,6 +101,7 @@ class MasterMind:
 	def win_check(self, color_picker, imput_guess):
 		"""evaluates input received from player against color_picker to determine win / true vs no win / false."""
 
+	
 		# retrieve peg_guess_color_list for current round
 
 		# retreive solution list
@@ -112,21 +113,22 @@ class MasterMind:
 		# if any of the values in each list do not match, produce a false value and promopt check_status method 
 		pass
 
-	def check_status(self, win_check, model_status):
+	def check_status(self): #is win_check needed here?
 		"""checks status or round for player, if round is => 10, prompt loose, if round is <= 9, prompt eval_status"""
 
-		# retreives false value from win_check
+		# compare against current status,  if status is <= 9, prompt eval guess
+		if self.model.status <= 9:
+			print ("You get to guess again, lucky you. \n...but your days are numbered\n....heh\n......heh\n........heh")
+			return True
 
-		# compare against current status, 
+		# compare against current status, if status is >= 10 prompt loose
+		if self.model.status >= 10:
+			print ("You loose")
+			return False
 
-		# if status is >= 10 prompt loose
-
-		# if status is <= 9, prompt eval guess
-
-		pass
 	
 	def eval_guess(self, Guess):
-		"""response to user guess after check status and status is less than or equal to 9, produces 'big-display' to update
+		"""response to user guess if check status is less than or equal to 9, produces 'big-display' to update
 		player on their status, pins and pegs, etc. """
 
 		# pulls comparison from win check and assigns peg responses 
