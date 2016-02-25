@@ -74,9 +74,9 @@ class CompareForWin(unittest.TestCase):
 	def test_compare_win(self):
 
 		# Create an instance of a hard coded guess
-		self.master.model.Guess = ["y,b,r,y"]
+		self.master.model.Guess = {"solution": "y", "b", "r", "y", "Guess 1": }
 		# Create an instance of a hard coded solution
-		self.master.color_picker.solution = ["y,b,r,y"]
+		self.master.color_picker.solution = ["y", "b", "r", "y"]
 		# Verify T/F output by comparing object with self.assertEqual
 		self.assertEqual(True, self.master.win_check(), "if both lists match")
 

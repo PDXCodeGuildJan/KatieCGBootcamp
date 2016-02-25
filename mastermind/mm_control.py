@@ -82,7 +82,7 @@ class MasterMind:
 			user_guess = Guess(peg_guess_color_list)
 
 			# Store guess object in our MasterModel
-			self.model.guesses["Guess 1"] = user_guess
+			self.model.guesses[self.model.status] = user_guess
 
 			# Make a variable that
 
@@ -98,20 +98,30 @@ class MasterMind:
 		# print("Prints out the first list of guesses. Key = Guess 1", self.model.guesses["Guess 1"])
 
 
-	def win_check(self, color_picker, imput_guess):
+	def win_check(self):
 		"""evaluates input received from player against color_picker to determine win / true vs no win / false."""
+		# Create a temp var to capture the number of correct matches
+		right = 0
+		# retrieve peg_guess_color_list for current round
+		guess = self.model.guesses[self.model.status]
+		# retreive solution list
+		solution = self.model.guesses["solution"]
+		# compare values in each index for both lists against eachother
+		for i in range(len(solution.pegs)):
+			# 
+			if solution.pegs[i].peg_color == guess.pegs[i].peg_color:
+				right += 1
+
+				print("Yay, it works!")
+
+		# If all indexes of the peg_colors in the solution and guess are True:
+		if right == 4:
+			return True
+
+		else:
+			return False
 
 	
-		# retrieve peg_guess_color_list for current round
-
-		# retreive solution list
-
-		# compare values in each index for both lists against eachother
-
-		# if all values in each list match eachother, produce a true value and prompt win
-
-		# if any of the values in each list do not match, produce a false value and promopt check_status method 
-		pass
 
 	def check_status(self): #is win_check needed here?
 		"""checks status or round for player, if round is => 10, prompt loose, if round is <= 9, prompt eval_status"""
@@ -136,6 +146,12 @@ class MasterMind:
 		# returns a list to be in hint_response
 
 		# displays as part of big display in view.
+
+		"""Borrow the logic from win_check to implement eval_guess. Use variables right and wrong to 
+		evaluate. Right = Black peg. Wrong = no peg. 
+
+		White will be generated from a third loop to compare the entire list"""
+
 
 		pass
 	
