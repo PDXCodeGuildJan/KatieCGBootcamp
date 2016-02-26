@@ -40,7 +40,7 @@ function galleryDisplay() {
 		
 		};
 	var imageList = "<ul>" + imageTest + "</ul>";
-	imageIndex ++ 1
+	imageIndex ++
 	};
 
 	imageTable.innerHTML += imageList
