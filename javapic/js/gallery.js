@@ -2,7 +2,7 @@
 * Objectives:
 *
 * 1. Update the slogan to add a ", user_name", with the user's name
-* 2. Loop through the image folder and display each image in the folder
+* X 2. Loop through the image folder and display each image in the folder
 * 3. Add the functionality so that if a user clicks on an image, the lightbox appears with that image loaded in
 * 4. When the lightbox is up, is the user clicks anywhere not on the image, the lightbox closes
 *
@@ -18,11 +18,20 @@
  * 
  */
 
-
-
  /* ----------------------------------------- */
 
-document.onclick = galleryDisplay;
+
+function addName () {
+	var userName = document.getElementsByClassName("tagline");
+
+	var newTagline = userName + "your FACE";
+
+	console.log("Your FACE");
+
+
+
+}
+
 
 
 function galleryDisplay() {
@@ -31,23 +40,31 @@ function galleryDisplay() {
 
 	
 	var imageIndex = 1
-	var imageTest = "<li><img src='images/pdxcg_" + imageIndex + ".jpg' /></li>";
+	var imageTest = "";
 
 	while (imageIndex <= 60) {
 		if (imageIndex <= 9) {
 
 			imageTest = "<li><img src='images/pdxcg_0" + imageIndex + ".jpg' /></li>"
+		} else if (imageIndex === 42) {
+
+			imageTest = ""
 		
+		} else {
+
+			imageTest = "<li><img src='images/pdxcg_" + imageIndex + ".jpg' /></li>"			
 		};
+
+
 	var imageList = "<ul>" + imageTest + "</ul>";
-	imageIndex ++ 1
+	imageGrid.innerHTML += imageList
+	imageIndex ++ 
 	};
-
-	imageTable.innerHTML += imageList
-
 
 
 };
+
+window.addEventListener("load", galleryDisplay, addName);
 
 
 
