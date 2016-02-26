@@ -40,31 +40,36 @@ function galleryDisplay() {
 
 	
 	var imageIndex = 1
-	var imageTest = "";
+	var imageList = "<ul>"
+	var imageGallery = "";
 
 	while (imageIndex <= 60) {
 		if (imageIndex <= 9) {
 
-			imageTest = "<li><img src='images/pdxcg_0" + imageIndex + ".jpg' /></li>"
+			imageGallery = "<li><img src='images/pdxcg_0" + imageIndex + ".jpg' /></li>"
 		} else if (imageIndex === 42) {
-
-			imageTest = ""
+			// imageIndex ++
+			imageGallery = ""
 		
 		} else {
 
-			imageTest = "<li><img src='images/pdxcg_" + imageIndex + ".jpg' /></li>"			
+			imageGallery = "<li><img src='images/pdxcg_" + imageIndex + ".jpg' /></li>"			
 		};
 
 
-	var imageList = "<ul>" + imageTest + "</ul>";
-	imageGrid.innerHTML += imageList
-	imageIndex ++ 
+	imageList += imageGallery;
+	imageIndex ++
+	// console.log(imageList)
+	// console.log(imageGallery) 
 	};
+
+	imageList += "</ul>"
+	imageGrid.innerHTML = imageList
 
 
 };
 
-window.addEventListener("load", galleryDisplay, addName);
+window.addEventListener("load", galleryDisplay);
 
 
 

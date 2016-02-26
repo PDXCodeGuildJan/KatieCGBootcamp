@@ -14,15 +14,43 @@
   *
   */
 
+  // xGet image loaded into jumbotron!
+  // xGet image to fit inside jumbotron
+  // xGet all images to load inside jumbotron
+  // XDouble check all images will load
+  // XGet image 60 to go to image 1
+  // XGet all photos to scroll through
 
-  function jumboTron() {
+  // Fix empty #42- it just displays the toe photo
 
-  	var jumbo = document.getElementById("jumbotron");
+var imageIndex = 39;
 
-  	var photoTest = "<img src='images/pdxcg_03.jpg' />"
+function jumboTron() {
+	var jumbo = document.getElementById("jumbotron");
+  	console.log(jumbo);
 
-  	jumbo.innerHTML = photoTest
+  	if (imageIndex <= 9) {
+  		jumbo.style.backgroundImage = "url('images/pdxcg_0" + imageIndex + ".jpg')";
+  		imageIndex += 1;
 
-  };
+  	} else if (imageIndex >= 10 && imageIndex != 42) {
+  		jumbo.style.backgroundImage = "url('images/pdxcg_" + imageIndex + ".jpg')";
+  		imageIndex += 1;
 
-  window.addEventListener("load", jumboTron)
+  	} else {
+  		jumbo.style.backgroundImage = "";
+  		
+  		imageIndex += 1;
+  	}
+
+  	if (imageIndex >= 61) {
+
+  		imageIndex = 1;
+  	}
+
+
+ };
+
+// var imageIndex = 1
+window.setInterval(jumboTron, 2000);
+// window.addEventListener("load", jumboTron);	
