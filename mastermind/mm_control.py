@@ -21,7 +21,7 @@ class MasterMind:
 		self.view = MasterView()
 
 
-	def start_game(self, show_start, show_rules):
+	def start_game(self):
 		"""This starts the game. Pings show-start, show_rules from mm_view and introduces rules to player."""
 
 		pass
@@ -123,7 +123,7 @@ class MasterMind:
 
 	
 
-	def check_status(self): #is win_check needed here?
+	def check_status(self):
 		"""checks status or round for player, if round is => 10, prompt loose, if round is <= 9, prompt eval_status"""
 
 		# compare against current status,  if status is <= 9, prompt eval guess

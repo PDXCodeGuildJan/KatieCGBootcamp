@@ -27,7 +27,7 @@ document.onclick = galleryDisplay;
 
 function galleryDisplay() {
  
-	var imageTable = document.getElementById("gallery");
+	var imageGrid = document.getElementById("gallery");
 
 	
 	var imageIndex = 1
@@ -39,11 +39,10 @@ function galleryDisplay() {
 			imageTest = "<li><img src='images/pdxcg_0" + imageIndex + ".jpg' /></li>"
 		
 		};
+	var imageList = "<ul>" + imageTest + "</ul>";
 	imageIndex ++ 1
 	};
 
-	var imageList = "<ul>" + imageTest + "</ul>";
-	console.log(imageList)
 	imageTable.innerHTML += imageList
 
 

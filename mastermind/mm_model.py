@@ -6,12 +6,11 @@ class MasterModel:
 
 	def __init__(self):
 		
-		self.guesses = {} # To be a dictionary of guess objects. Key: int(1-10) 
-							# Value: Guess object
+		self.guesses = {} # To be a dictionary of peg objects for guesses and the solution. Key: int(1-10) 
+							# Value: Guess object 
 		self.status = 1
 
-	"""need a place to store solution, could this be in the dictionary
-	we are making for storing user guesses?"""
+
 
 class Guess:
 	"""for creation and storage of user guess and response objects"""
