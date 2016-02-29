@@ -102,8 +102,6 @@ function addStock() {
 	}
 
 
-	// console.log("this will be all checked boxes: ", boxesChecked);
-
 };
 
 

@@ -76,8 +76,9 @@ function imageEnlarge() {
 	// something like (but not syntactically) onlick class = "display_img"?
 
 	// find the div and target the class
-	enlargePhoto = document.querySelectorAll("main > div > .display_img")
+	enlargePhoto = document.getElementsByClassName("display_none")
 	console.log("enlargePhoto??: ", enlargePhoto)
+	enlargePhoto.className = "display_img";
 
 
 	// var imageEnlarge = document.getElementsByClassName("display_none").style.display = "inline-block";
