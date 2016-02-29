@@ -76,8 +76,8 @@ function imageEnlarge() {
 	// something like (but not syntactically) onlick class = "display_img"?
 
 	// find the div and target the class
-	enlargePhoto = document.getElementsByClassName("display_none")
-	console.log("enlargePhoto??: ", enlargePhoto)
+	enlargePhoto = document.getElementById("image_show")
+	console.log("Enlarged Photo??: ", enlargePhoto)
 	enlargePhoto.className = "display_img";
 
 
