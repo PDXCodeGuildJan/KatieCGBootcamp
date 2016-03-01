@@ -53,5 +53,5 @@ function jumboTron() {
 
 
 // var imageIndex = 1
-window.setInterval(jumboTron, 10000);
+window.setInterval(jumboTron, 1000);
 // window.addEventListener("load", jumboTron);	
