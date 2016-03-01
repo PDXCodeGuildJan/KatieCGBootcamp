@@ -82,25 +82,23 @@ function imageEnlarge(event) {
 	// something like (but not syntactically) onlick class = "display_img"?
 	if (event.target.nodeName === "IMG") {
 		var enlargePhoto = document.getElementById("image_show");
-		console.log("Enlarged Photo??: ", enlargePhoto)
+		console.log("Enlarged Photo??: ", enlargePhoto);
 		enlargePhoto.className = "display_img";
 
 		// Target the img src inside of the div
 		enlargePhoto.firstChild.src = event.target.src;
-	} 
+	};
 
 }
 
 function imageRevert() {
-	console.log("The imageRevert is now reporting to the console for duty, your highness!")
+	console.log("The imageRevert is now reporting to the console for duty, your highness!");
 	if (event.target.nodeName != "IMG") {
 
-		// then have imageEnlarge revert back to "display_none" when the surrounding area of the lightbox is clicked
-		// something like (but not syntactically) onlick class = "display_none"?
 		var revert = document.getElementById("image_show");
 		// Only if the background has been clicked...
 		revert.className = "display_none";
-	}
+	};
 
 };
 

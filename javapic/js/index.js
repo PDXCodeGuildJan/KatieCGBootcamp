@@ -1,8 +1,8 @@
 /* 
  * Objectives:
  * 
- * 1. Have the background image of the jumbotron change to another image in the folder every 10 seconds
- *
+ * X 1. Have the background image of the jumbotron change to another image in the folder every 10 seconds
+ *  2. Make sure the toe photo does not show up anymore
  */
 
  /* 
@@ -14,16 +14,8 @@
   *
   */
 
-  // xGet image loaded into jumbotron!
-  // xGet image to fit inside jumbotron
-  // xGet all images to load inside jumbotron
-  // XDouble check all images will load
-  // XGet image 60 to go to image 1
-  // XGet all photos to scroll through
 
-  // Fix empty #42- it just displays the toe photo
-
-var imageIndex = 39;
+var imageIndex = 1;
 
 function jumboTron() {
 	var jumbo = document.getElementById("jumbotron");
@@ -53,5 +45,5 @@ function jumboTron() {
 
 
 // var imageIndex = 1
-window.setInterval(jumboTron, 1000);
+window.setInterval(jumboTron, 10000);
 // window.addEventListener("load", jumboTron);	
