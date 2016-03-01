@@ -12,16 +12,48 @@ removeStockButton.onclick = removeStock;
 
 var products = [];
 
-/**
- * Add the item in the text fields to the inventory
+/* Add the item in the text fields to the inventory
  * list, which is stored inside the table body (id="inventory")
- **/
+ */
 function addItem() {
 	var materialName = document.getElementById("name").value;
+	// console.log(materialName);
 	var price = document.getElementById("price").value;
+	// console.log(price);
+
 	// Get whether or not the checkbox has been checked
 	var inStock = document.getElementById("in-stock").checked;
+	// console.log(inStock);
 
+
+
+	// var invetory is assigned to the id "inventory"
+	var inventory = document.getElementById("inventory");
+	// var tableEmpty is set to nothing so we can add to the row later
+	var tableEmpty = "<td> <input type='checkbox' class='stock' /></td>";
+	var tableMarName = "<td>" + materialName + "</td>";
+	var tablePrice = "<td>" + price + "</td>";
+	// this row will have data from inStock to be displayed as the class
+	var tableStock = "<td class='" + inStock + "'>"
+	
+
+	// if var inStock is true (In other words, if the box is checked):
+	if (inStock == true) {
+		// var tableStock will display "yes"
+		tableStock += "Yes </td>"
+	
+	// if var tableStock is anything but true
+	} else {
+		// var tableStock will display "no"
+		tableStock += "No </td>"
+	};
+	
+
+	// NewTableRow will create a table with the data from the vars above!
+	var newTableRow = "<tr>" + tableEmpty + tableMarName + tablePrice + tableStock + "</tr>";
+
+	// displays all data in each row, += allowing to add more than one row!
+	inventory.innerHTML += newTableRow;
 
 	// Create a new instance of the Product
 	// object with the new Item's info
@@ -29,50 +61,12 @@ function addItem() {
 	var newProd = new Product(materialName, price, inStock);
 	products.push(newProd);
 
-};
+};  
 
-/** 
- * Adds all the items in the products array to
- * the HTML.
- **/ 
-function displayInventory() {
-
-// Loop through the products array, adding each Products
-// to the inventory table in the HTML
-	for (var i = 0; i < products.length; i++) {
-		// Make a new row for product i
-		var rewRow = document.createElement("TR");
-
-		// Make a TD for the checkbox
-		var checkbow = document.createElement("TD");
-
-		// Make a TD for the material name
-		var matName = document.createElement("TD");
-		matName.textContent = products[i].prodName;
-
-		// Make a TD for the price
-		var price = document.createElement("TD");
-		price.textContent = products[i].price;
-
-		// Make a TD for the stock toggle
-		var inStock = document.createElement("TD");
-		inStock.textContent = (function(inStock) {
-			if (inStock) {
-				return "Yes";
-			}
-			return "No";
-		}(products[i].inStock]));
-
-	};
-
-}
-
-
-/**
- * Toggles the inStock status on the selected
+/* Toggles the inStock status on the selected
  * rows inside of the inventory to "No"
  * Use querySelectorAll()
- **/
+ */
 function removeStock() {
 	// Get all checked stock boxes 
 	var getRemoveBoxes = document.querySelectorAll("tbody > tr >td > input:checked");
@@ -87,10 +81,9 @@ function removeStock() {
 	};
 };
 
-/**
- * Toggles the inStock status on the selected 
+/* Toggles the inStock status on the selected 
  * rows inside of inventory to "Yes"
- **/
+ */
 function addStock() {
 
 	// Find all selected boxes 
@@ -119,9 +112,7 @@ function addStock() {
 };
 
 
-/**
- * Constructor for the Product object 
- **/
+/* Constructor for the Product object */
  function Product(name, price, inStock) {
  	this.prodName = name;
  	this.price = price;
