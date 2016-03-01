@@ -10,6 +10,7 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
+var inventory = [];
 
 /* Add the item in the text fields to the inventory
  * list, which is stored inside the table body (id="inventory")
@@ -53,6 +54,12 @@ function addItem() {
 
 	// displays all data in each row, += allowing to add more than one row!
 	inventory.innerHTML += newTableRow;
+
+	// Create a new instance of the Product
+	// object with the new Item's info
+
+	var newProd = new Product(materialName, price, inStock);
+	inventory.push(newProd);
 
 };  
 
@@ -104,6 +111,18 @@ function addStock() {
 
 };
 
+
+/* Constructor for the Product object */
+ function Product(name, price, inStock) {
+ 	this.prodName = name;
+ 	this.price = price;
+ 	this.inStock = inStock
+
+ 	this.setStock = function(stock){
+ 		this.inStock = stock;
+ 	} 
+
+ }
 
 
 
