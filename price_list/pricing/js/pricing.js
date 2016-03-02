@@ -4,6 +4,9 @@
 var addItemButton = document.getElementById("add-item");
 addItemButton.onclick = addItem;
 
+var addDelItem = document.getElementById("del-item");
+addDelItem.onclick = deleteItem;
+
 var addStockButton = document.getElementById("add-stock");
 addStockButton.onclick = addStock;
 
@@ -87,7 +90,7 @@ function displayInventory() {
 		inventory.appendChild(newRow);
 	};
 
-}
+};
 
 /**
  * Toggles the inStock status on the selected
@@ -98,12 +101,13 @@ function removeStock() {
 	// Get all checked stock boxes 
 	var getRemoveBoxes = getSelectedRowBoxes();
 
-
+	// For every index of the length of the array
 	for (var i = 0; i < getRemoveBoxes.length; i++) {
+		// Using DOM manipulation get a selected checked box in the array 
 		var status = getRemoveBoxes[i].parentNode.parentNode.children[3];
-
+		// Change the status to "No"
 		status.textContent = "No";
-
+		// Change the class to "false"
 		status.className = "false";
 
 		// Update the Product in the products array that 
@@ -123,9 +127,9 @@ function addStock() {
 	var boxesChecked = getSelectedRowBoxes();
 	// for every index of the length of the array
 	for (var i = 0; i < boxesChecked.length; i++) {
-		// Using DOM manipulation get a selected checkbox
+		// Using DOM manipulation get a selected checkbox in the array
 		var status = boxesChecked[i].parentNode.parentNode.lastChild;
-		// Text is now "Yes"
+		// Change status to "Yes"
 		status.textContent = "Yes";
 		// And the class is now "true"
 		status.className = "true";
@@ -135,14 +139,13 @@ function addStock() {
 		var prodId = boxesChecked[i].parentNode.parentNode.id;
 		products[prodId].inStock = true;
 
-	}
+	};
 
 };
 
 /**
  * Delete the selected rows from the inventory.
  **/
-
 function deleteItem() {
 
 	// First, determine all the selected rows
@@ -151,13 +154,19 @@ function deleteItem() {
 
 	// Delete the Product objects that correspond
 	// to those rows from the products arrays
-
+	for (var i = selected.length -1; i>= 0; i--) {
+		// Get the Id on the row the checkbox is in
+		var prodId = selected[i].parentNode.parentNode.id;
+		// Delete the product at that index (id= index)
+		delete products[prodId];
+		products.splice(prodId, 1);
+	};
 
 
 	// Render the HTML list, using displayInventory
 	displayInventory();
 
-}
+};
 
 /** 
  * Helper function to get all the checked checkboxes in
@@ -168,7 +177,7 @@ function getSelectedRowBoxes () {
 	var selected = document.querySelectorAll("tbody > tr >td > input:checked");
 	return selected;
 
-}
+};
 
 /**
  * Constructor for the Product object 
@@ -182,9 +191,8 @@ function Product(name, price, inStock) {
 		this.inStock = stock;
  	
 
-	} 
-
-}
+	};
+};
 
 
 
