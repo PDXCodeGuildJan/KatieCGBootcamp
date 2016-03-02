@@ -32,7 +32,7 @@ function dice() {
 		// create variable randnum to hold a random number from 1-6 (ceil rounds up, random gives a random
 			// number between 0-1, hence the need for *6)
 		var randNum = Math.ceil(Math.random() * 6);  
-		// display each random die side using one of the six inported die images!
+		// display each random die side using one of the six imported die images!
 		counter.innerHTML += "<img src='dice/" + randNum + ".png' alt='A die.'/><br/>";
 
 
