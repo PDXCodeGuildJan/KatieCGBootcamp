@@ -13,6 +13,9 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
+window.onload = loadData;
+
+// Initialize the global variable that stores the inventory
 var products = [];
 
 /**
@@ -33,6 +36,7 @@ function addItem() {
 	products.push(newProd);
 
 	displayInventory();
+	saveData();
 };
 
 /** 
@@ -92,6 +96,7 @@ function displayInventory() {
 
 };
 
+
 /**
  * Toggles the inStock status on the selected
  * rows inside of the inventory to "No"
@@ -116,6 +121,7 @@ function removeStock() {
 		products[prodId].inStock = false;
 
 	};
+	saveData();
 };
 
 /**
@@ -140,7 +146,7 @@ function addStock() {
 		products[prodId].inStock = true;
 
 	};
-
+	saveData();
 };
 
 /**
@@ -165,6 +171,7 @@ function deleteItem() {
 
 	// Render the HTML list, using displayInventory
 	displayInventory();
+	saveData();
 
 };
 
@@ -194,5 +201,35 @@ function Product(name, price, inStock) {
 	};
 };
 
+
+/**
+ * Saves current state of the products array
+ **/
+function saveData() {
+	// Transform the product's array into a JSON string
+	var productJSON = JSON.stringify(products);
+	console.log("list of items: ", productJSON);
+	
+	// Save that JSON string to local storage
+	localStorage.setItem("price_list", productJSON);
+ }
+
+/** 
+ * Loads the current state of the products array.
+ **/
+function loadData() {
+	console.log("Hello, World!")
+	var productJSON = localStorage.getItem("price_list");
+	console.log("loaded data: ", productJSON);
+	// Parse it into a JS data type & save to the global array
+	products = JSON.parse(productJSON);
+	console.log(products);
+
+	if (!products) {
+		products = []
+	}
+	// Update the rendered display
+	displayInventory()
+}
 
 
