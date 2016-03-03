@@ -218,9 +218,9 @@ function saveData() {
  * Loads the current state of the products array.
  **/
 function loadData() {
-	console.log("Hello, World!")
-	var productJSON = localStorage.getItem("price_list");
-	console.log("loaded data: ", productJSON);
+	// console.log("Hello, World!")
+	// var productJSON = localStorage.getItem("price_list");
+	// console.log("loaded data: ", productJSON);
 	// Parse it into a JS data type & save to the global array
 	products = JSON.parse(productJSON);
 	console.log(products);
