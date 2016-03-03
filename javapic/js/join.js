@@ -83,6 +83,16 @@ function addEmail() {
 	var email = document.forms["signup"]["email"].value
 
 	// Using regex, affirm that the e-mail given is a valid one 
+	
+	/*
+	^ outside of brackets = start at very beginning of the string
+	^ inside of brackets = everything we DONT want
+	\s = space 
+	+ = one or more of these characters
+	$ = end at the dollar sign
+	regex: /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+
+	*/
 
 	// If so, 
 	// return true
