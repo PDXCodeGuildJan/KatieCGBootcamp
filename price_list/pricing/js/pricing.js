@@ -201,7 +201,6 @@ function Product(name, price, inStock) {
 	};
 };
 
-
 /**
  * Saves current state of the products array
  **/
@@ -219,7 +218,7 @@ function saveData() {
  **/
 function loadData() {
 	// console.log("Hello, World!")
-	// var productJSON = localStorage.getItem("price_list");
+	var productJSON = localStorage.getItem("price_list");
 	// console.log("loaded data: ", productJSON);
 	// Parse it into a JS data type & save to the global array
 	products = JSON.parse(productJSON);
@@ -230,6 +229,13 @@ function loadData() {
 	}
 	// Update the rendered display
 	displayInventory()
+}
+/**
+ *	Load the data from the JSON file on the server with AJAX.
+ **/
+function loadDataWithAJAX() {
+
+
 }
 
 
