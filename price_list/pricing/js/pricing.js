@@ -243,7 +243,9 @@ function loadDataWithAJAX() {
 	request.onload = function () {
 		// Make sure that everything is good with the callback
 		if (request.status === 200) {
-			console.log(request.responseText);
+			var prodJSON = request.responseText;
+			products = JSON.parse(prodJSON);
+			displayInventory();
 		}
 	}
 	// Actually send out the request!
