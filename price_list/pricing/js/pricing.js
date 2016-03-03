@@ -13,7 +13,7 @@ addStockButton.onclick = addStock;
 var removeStockButton = document.getElementById("remove-stock");
 removeStockButton.onclick = removeStock;
 
-window.onload = loadData;
+window.onload = loadDataWithAJAX;
 
 // Initialize the global variable that stores the inventory
 var products = [];
@@ -234,8 +234,20 @@ function loadData() {
  *	Load the data from the JSON file on the server with AJAX.
  **/
 function loadDataWithAJAX() {
+	// Create a new XMLHTTPRequest object
+	var request = new XMLHttpRequest();
+	// Add the call info
+	request.open("GET", "data.json", true);
 
-
+	// Setup the onload function
+	request.onload = function () {
+		// Make sure that everything is good with the callback
+		if (request.status === 200) {
+			console.log(request.responseText);
+		}
+	}
+	// Actually send out the request!
+	request.send();
 }
 
 
