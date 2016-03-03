@@ -1,0 +1,17 @@
+[
+  {
+    "prodName": "Katie",
+    "price": "5",
+    "inStock": true
+  },
+  {
+    "prodName": "Katie",
+    "price": "7",
+    "inStock": false
+  },
+  {
+    "prodName": "Chelsea",
+    "price": "5",
+    "inStock": true
+  }
+]
