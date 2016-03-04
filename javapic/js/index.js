@@ -5,45 +5,42 @@
  *  2. Make sure the toe photo does not show up anymore
  */
 
- /* 
-  * ID's, classes, etc:
-  *
-  * 1. <span class= "tagline">
-  * 2. <div id= "jumbotron" class= "jumbotron">
-  * 3. <div class= "bottom_jumbo">
-  *
-  */
-
-
+// Init the var imageIndex to start at one so the jumbotron loops through each photo
 var imageIndex = 1;
 
+/**
+ * Create a jumbotron to loop through each photo every ten seconds
+ **/
 function jumboTron() {
+  // Init var jumbo to grab and store Id "jumbotron"
 	var jumbo = document.getElementById("jumbotron");
-  	console.log(jumbo);
-
+    // If the photo index is <= 9
   	if (imageIndex <= 9) {
-  		jumbo.style.backgroundImage = "url('images/pdxcg_0" + imageIndex + ".jpg')";
-  		imageIndex += 1;
-
+  		// The background image of the id "jumbotron" will display each photo
+      jumbo.style.backgroundImage = "url('images/pdxcg_0" + imageIndex + ".jpg')";
+  		// Increment by one to continute looping through
+      imageIndex += 1;
+    // If the photo index is >= 10 and the imageIndex is not 42
   	} else if (imageIndex >= 10 && imageIndex != 42) {
-  		jumbo.style.backgroundImage = "url('images/pdxcg_" + imageIndex + ".jpg')";
-  		imageIndex += 1;
+  		// The background image of the id "jumbotron" will dispaly each photo
+      jumbo.style.backgroundImage = "url('images/pdxcg_" + imageIndex + ".jpg')";
+  		// Increment by one to continue looping through
+      imageIndex += 1;
 
   	} else {
+      // This is so the jumbotron skips over the missing #42 photo
+      // It replaces the black screen with the default photo
+      // Not perfect, but it fails gracefully!
   		jumbo.style.backgroundImage = "";
-  		
+  		// Increment by one to continue looping through
   		imageIndex += 1;
-  	}
-
+  	};
+    // To stop the "loop", if the imageIndex is >= 61
   	if (imageIndex >= 61) {
-
+      // Start the "loop" over!
   		imageIndex = 1;
-  	}
-
+  	};
 
  };
-
-
-// var imageIndex = 1
+// Sets the jumbotron to display & change photo every 10 seconds!
 window.setInterval(jumboTron, 10000);
-// window.addEventListener("load", jumboTron);	
