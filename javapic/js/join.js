@@ -1,39 +1,33 @@
-// * 
-//  * Objectives:
-//  * PAGE 247 IN BOOK HAS A TON OF FORM EVENTS
-//  * PAGE 249 IN BOOK HAS A GREAT FORM EXAMPLE
-//  * 1. Add form validation that works in all major browsers (you'll need to deactivate browser validate to check this)
-//  * 2. Form validation should have all fields marked "required" required, and all email fields should 
-//  *    require and check for proper email syntax.
-//  * 3. Any validation errors should be presented clearly to the user so that they may correct them
-//  * 4. On completion of the form, navigate the user to the gallery, passing their name to the page
-//  *
-
-
-
+/**
+ * Remove the automatic validation built-in on some browsers
+ **/
 function removeFormVal() {
 // Remove the automatic form validation
 var signUp = document.getElementById("signup").noValidate = true;
 }
 
+/**
+ * Submit form once every field has been correct filled in
+ **/
 function formSubmit(event) {
 	// Prevent the form from reverting back to the default setting
 	event.preventDefault()
 
-
+	// If all fields have been filled in correctly
 	if (addName() == true && addUsername() == true && addEmail() == true) {
+		// Call the gallery.html page! Success!
 		window.location="gallery.html";
-	}
-
+	};
+	sessionStorage.setItem("name", inputs[0].value);
 };
 
+/**
+ * Add name to name field of the login page
+ **/
 function addName() {
-	
 	// Retrieve information from user when name has been added to the correct form field
 	var name = document.forms["signup"]["name"].value
 	// console.log("name")
-
-	
 	
 	if (name == null || name == "") {
 		// Notify user of missing field
@@ -48,6 +42,9 @@ function addName() {
 
 };
 
+/**
+ * Add username to username field of the login page
+ **/
 function addUsername() {
 	
 	// Retrieve information from user when the username has been added to the correct form field
@@ -67,14 +64,15 @@ function addUsername() {
 
 };
 
+/**
+ * Add e-mail to username field of the login page. Check e-mail validity using RegEx
+ **/
 function addEmail() {
 	
 	// Retrieve information from user when the e-mail has been added to the correct form field
 	var email = document.forms["signup"]["email"].value
 
 	// Using regex, affirm that the e-mail given is a valid one 
-	// var inputEval = /^[^@\s]+e+$/.test(email);
-	// If the input is a valid email
 	if (/^[^\s@]+@[^\s\.@]+\.[^\s\.@]+$/.test(email)) {
 		return true;
 	} else {
@@ -85,7 +83,7 @@ function addEmail() {
 };
 
 /*----------------------- 
-EVENT LISTENERS*/
+EVENT LISTENERS AND CALLS*/
 document.getElementById("signup").addEventListener("submit", formSubmit, true);
 removeFormVal()
 /*-----------------------*/
