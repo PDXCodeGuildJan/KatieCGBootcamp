@@ -18,7 +18,7 @@ function formSubmit(event) {
 		// Call the gallery.html page! Success!
 		window.location="gallery.html";
 	};
-	sessionStorage.setItem("name", inputs[0].value);
+
 };
 
 /**
