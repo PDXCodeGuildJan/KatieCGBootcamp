@@ -1,4 +1,4 @@
-/* 
+/** 
 * Objectives:
 *
 * 1. Update the slogan to add a ", user_name", with the user's name
@@ -6,22 +6,11 @@
 * X 3. Add the functionality so that if a user clicks on an image, the lightbox appears with that image loaded in
 * X 4. When the lightbox is up, is the user clicks anywhere not on the image, the lightbox closes
 *
-*/
+**/
 
 // page 391 for loading name???
 
-/* 
- * ID's, classes, etc:
- *
- * 1. <main class= "gallery_page">
- * 2. <span class="tagline">
- * 3. <section id= "gallery" class= "gallery">
- * 4. <div id= "image_show" class= "display_none">
- * 
- */
-
- /* ----------------------------------------- */
-
+/* ----------------------------------------- */
 
 // function addName () {
 // 	var userName = document.getElementsByClassName("tagline");
@@ -31,79 +20,87 @@
 // 	console.log("Your FACE");
 
 // }
-document.addEventListener("click", test)
 
-function test(event) {
-	console.log(event.target.nodeName)
-
-}
-
-
+/**
+ * Loop through a file of pictures to display photos in a grid form
+ **/
 function galleryDisplay() {
- 
+ 	// Create var imageGrid to grab and store the Id "gallery"
 	var imageGrid = document.getElementById("gallery");
 
-	
+	// Init var imageIndex to loop through to display each 
 	var imageIndex = 1
+	// var imageList begins the <ul> to eventually store each <li>, or each photo
 	var imageList = "<ul>"
+	// Init var imageGallery to an empty string. We will use this for each photo we loop through
 	var imageGallery = "";
-
+	// While there are still photos to loop through...
 	while (imageIndex <= 60) {
-		if (imageIndex <= 9) {
 
+		if (imageIndex <= 9) {
+			// Add a "0" to each image index
 			imageGallery = "<li><img src='images/pdxcg_0" + imageIndex + ".jpg' /></li>"
+		// If/When the imageIndex is 42
 		} else if (imageIndex === 42) {
+			// Skip that photo entirely (because it does not exist.)
 			imageGallery = ""
 		
 		} else {
-
+			// Concatinate the image index to the img src tag
 			imageGallery = "<li><img src='images/pdxcg_" + imageIndex + ".jpg' /></li>"			
 		};
 
-
 	imageList += imageGallery;
 	imageIndex ++
-	// console.log(imageList)
-	// console.log(imageGallery) 
 	};
-
+	// Append a closing </ul> after each photo has been looped through to finish the <ul>
 	imageList += "</ul>"
 	imageGrid.innerHTML = imageList
 
 
 };
 
-// document.addEventListener("gallery" onclick)
+/*----------------------- 
+EVENT LISTENERS*/
+// Create an event listener for the gallery Id. Every time it is clicked, call imageEnlarge
 document.getElementById("gallery").addEventListener("click", imageEnlarge);
+// Create an event listener for the image_show Id. Every time it is clicked, call imageRevert
 document.getElementById("image_show").addEventListener("click", imageRevert);
+/*-----------------------*/
 
+/**
+ * Enlarge a photo when it has been clicked
+ **/
 function imageEnlarge(event) {
-	console.log(event.target.src);
-	console.log("The imageEnlarge is now reporting to the console for duty, ma'am!");
-	// get imageEnlarge to display the class "display_img" when a photo is clicked
-	// something like (but not syntactically) onlick class = "display_img"?
+	// If the IMG has been clicked
 	if (event.target.nodeName === "IMG") {
+		// init var enlargePhoto to grab and store Id "image_show"
 		var enlargePhoto = document.getElementById("image_show");
-		console.log("Enlarged Photo??: ", enlargePhoto);
+		// The id image_show's className will be switched to "display_img"
+		// to display the enlarged photo
 		enlargePhoto.className = "display_img";
 
 		// Target the img src inside of the div
 		enlargePhoto.firstChild.src = event.target.src;
 	};
 
-}
+};
 
+/**
+ * Make the enlarged photo disappear, reverting back to the gallery display
+ **/
 function imageRevert() {
-	console.log("The imageRevert is now reporting to the console for duty, your highness!");
+	// If the anywhere but the IMG has been clicked
 	if (event.target.nodeName != "IMG") {
-
+		// init var revert to grab and store Id "image_show"
 		var revert = document.getElementById("image_show");
-		// Only if the background has been clicked...
+		// The id image_show's className will be switched to "display_none"
+		// Only if the background has been clicked
 		revert.className = "display_none";
 	};
 
 };
-
+// Load the gallery page
 window.addEventListener("load", galleryDisplay);
 
 
