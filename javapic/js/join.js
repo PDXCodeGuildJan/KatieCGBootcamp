@@ -12,11 +12,12 @@ var signUp = document.getElementById("signup").noValidate = true;
 function formSubmit(event) {
 	// Prevent the form from reverting back to the default setting
 	event.preventDefault()
+	var passName = addName()
 
 	// If all fields have been filled in correctly
 	if (addName() == true && addUsername() == true && addEmail() == true) {
 		// Call the gallery.html page! Success!
-		window.location="gallery.html";
+		window.location.href = "gallery.html" + passName;
 	};
 
 };
