@@ -10,3 +10,67 @@ Star Wars poster.
  * 1. Using the colors chosen (screenshot on desktop), style
    the HTML in a simple, yet elegent design
  */
+/*---------------------------Font Imports---------------------------*/
+
+/* Cursive font */
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+/* Plain font */
+@import url(https://fonts.googleapis.com/css?family=Hind);
+
+/*------------------------Main Body Stylings------------------------*/
+/* Load background image */
+body {
+	background-image: url("blue-background.jpg");
+	background-repeat:repeat;
+}
+/* Aligns all sections properly */
+form {
+	margin: 0 auto;
+	display: inline-block;
+	min-width: 450px;
+	width: 60%;
+	border-radius: 3px;
+	box-shadow: 30px 40px #0f4456;
+	background-color: #278493;
+}
+
+.post-layout {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+
+input[type="text"]
+
+
+/*--------------------------Header Styling--------------------------*/
+
+h1 {
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+	color: #fff;
+}
+
+
+/*--------------------------Footer Styling--------------------------*/
+
+/* Center footer */
+footer {
+	text-align: center;
+}
+
+/* Style footer */
+footer a {
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Hind', sans-serif;
+	display: inline-block;
+	width: 50%;
+	margin-top: 30px;
+	background-color: #fdae4a;
+	box-shadow: 5px 5px #f13e39;
+	border-radius: 2px;
+
+}
+
