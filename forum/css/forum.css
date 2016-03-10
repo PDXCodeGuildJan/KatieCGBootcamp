@@ -21,19 +21,10 @@ Star Wars poster.
 /*------------------------Main Body Stylings------------------------*/
 /* Load background image */
 body {
-	background-image: url("blue-background.jpg");
+	background-image: url("finalewok.jpg");
 	background-repeat:repeat;
 }
-/* Aligns all sections properly */
-form {
-	margin: 0 auto;
-	display: inline-block;
-	min-width: 450px;
-	width: 60%;
-	border-radius: 3px;
-	box-shadow: 30px 40px #0f4456;
-	background-color: #278493;
-}
+
 
 .post-layout {
 	width: 100%;
@@ -41,15 +32,42 @@ form {
 }
 
 
-input[type="text"]
 
 
 /*--------------------------Header Styling--------------------------*/
 
+/* Styles the "Galaxy Post header */
 h1 {
 	text-align: center;
 	font-family: 'Pacifico', cursive;
 	color: #fff;
+}
+
+/*---------------------------Form Styling---------------------------*/
+
+/* Aligns form section properly */
+/*	and styles basic form elements */
+form {
+	margin: 0 auto;
+	display: block;
+	min-width: 450px;
+	width: 45%;
+	padding: 30px;
+	border-radius: 3px;
+	box-shadow: 10px 15px #0f4456;
+	background-color: #278493;
+	color: #fff;
+	font-family: 'Pacifico', cursive;
+
+}
+
+/* Changes text inside of the forms*/
+input[type="text"] {
+	font-family: 'Hind', sans-serif;
+}
+
+input[value="submit"] {
+	font-family: 'Pacifico', cursive;
 }
 
 
