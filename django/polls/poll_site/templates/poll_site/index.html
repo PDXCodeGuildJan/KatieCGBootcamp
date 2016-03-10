@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" type="text/css" href="static/poll_site/styles.css">
+	<body>
+		<h1>Sup, {{name}}!</h1>
+		<div class="blurb">
+		<p>This is a little blurb about how cool this is! How cool is this?!</p>
+		</div>
+		<div class"image">
+		<!-- <img src="http://media.vanityfair.com/photos/562d85798099cf93611e41c8/master/w_900,c_limit/walking-dead-glenn-dead.jpg"> -->
+		<a href="{% url 'corgis' %}">Corgi Site</a>
+		<ul>
+			{% for item in shows  %}
+				<li>{{item}}</li>
+			{% endfor %}
+		<ul>
+		<div>
+	</body>
+</html>
