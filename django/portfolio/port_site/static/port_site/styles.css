@@ -1,6 +1,48 @@
+/*------------------------- Font Imports ------------------------------*/
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Sofia);
+
+/*------------------------- Body Styles -------------------------------*/
+
+body {
+	margin: 0px;
+	/*background-image: url("http://data1.whicdn.com/images/34077300/thumb.png");*/
+	background-repeat: repeat;
+	background-color: #fff;
+}
 
 h1 {
-	font-family: "Pacifico", cursive;
-	color: purple;
+	font-family: "Grand Hotel", cursive;
 }
+
+
+/*--------------------- Styling Navigation Bar -------------------------*/
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #D1495B;
+	box-shadow:0px 10px #EDAE49;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: #fff;
+	font-family: "Sofia", cursive;
+	font-size: 2em;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+	
+}
+
+div a:hover:not(.active) {
+	background-color: #EDAE49;
+}
+
