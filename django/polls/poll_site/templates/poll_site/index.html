@@ -8,13 +8,25 @@
 		<p>This is a little blurb about how cool this is! How cool is this?!</p>
 		</div>
 		<div class"image">
-		<!-- <img src="http://media.vanityfair.com/photos/562d85798099cf93611e41c8/master/w_900,c_limit/walking-dead-glenn-dead.jpg"> -->
 		<a href="{% url 'corgis' %}">Corgi Site</a>
 		<ul>
 			{% for item in shows  %}
 				<li>{{item}}</li>
 			{% endfor %}
 		<ul>
+		</div>
 		<div>
+			<h3> Questions! </h3>
+			<ul>
+				{% for q in questions %}
+				<li><a href="{% url 'question_details' q.id %}">{{ q.question_text }}</a></li>
+				<ul>
+				{% for choice in q.choice_set.all %}
+				<li> {{ choice.choice_text }}</li>
+				{% endfor %}
+				</ul>
+			{% endfor %}
+			</ul>
+		</div>
 	</body>
 </html>

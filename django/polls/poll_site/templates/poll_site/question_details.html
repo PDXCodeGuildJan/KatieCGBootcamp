@@ -1,0 +1,17 @@
+<html>
+
+	{{ question.question_text }}
+
+	<form>
+		{% for choice in choice_text %}
+		<input type="radio" value="choice">{{ choice.choice_text }}<br>
+		{% endfor %}
+		<input type="submit" value="Vote!">
+
+	</form>
+
+
+
+
+
+</html>
