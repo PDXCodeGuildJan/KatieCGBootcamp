@@ -15,7 +15,7 @@ def hello_world(request):
 def hello_world_render(request):
 
 	questions = Question.objects.all()
-	print()
+	
 
 	context = {
 		"questions": questions,
