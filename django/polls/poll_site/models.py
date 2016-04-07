@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class Question(models.Model):
 	"""Defines the Question class and model."""
+class Question(models.Model):
 	# Establish global variables for the class Quesetion
 	
 	# Define the attributes of the Question Model

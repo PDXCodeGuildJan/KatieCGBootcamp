@@ -31,7 +31,7 @@ client = Client(api_id="243f40b9", api_key="0b99d35c38f2043e163a04a97e9c5476", t
 		# specifications in an array.
 	# flavor.meaty.min/max: The allowed savoriness of the dish they're searching for.
 params = {
-    'q': 'pork chops',
+    'q': 'apple',
     'start': 0,
     'maxResult': 40,
     'requirePicutres': True,
@@ -44,7 +44,7 @@ params = {
     'flavor.sweet.min': 0,
     'flavor.sweet.max': 0.5,
     'nutrition.FAT.min': 0,
-    'nutrition.FAT.max': 15
+    'nutrition.FAT.max': 15,
 }
 
 # The var results holds each parameter the user specifies 
