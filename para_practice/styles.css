@@ -22,3 +22,63 @@ body {
 #bubbles2 {
 	background: url("http://media.tumblr.com/29330ba3e53125439c66726059881b0a/tumblr_inline_mvnv56MKwV1r9g3y8.png") 95% 95% no-repeat;
 }*/
+
+/** 
+ * SECOND PRACTICE
+ * Stlyes for Practive Parallax Scrolling
+ **/
+
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,300);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300);
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 2em;
+	color: #fff;
+}
+
+#home {
+	background: url(roses.jpg) 50% 0 repeat fixed;
+	/* make image size I want */
+	min-height: 1000px;
+	/* Responsive Design */
+	height: 1000px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1920px;
+	position: relative;
+}
+
+/* Text styles within Home */
+#home article {
+	height: 458px;
+	position: relative;
+	text-align: center;
+	top: 150px;
+	width: 100%;
+} 
+
+#about {
+	background: url(tea.jpg) 50% 0 no-repeat;
+	min-height: 1000px;
+	/* Responsive Design */
+	height: 1000px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1920px;
+	position: relative;
+	/* Pretty shadows */
+	-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+	box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+/* Text styles within About */
+#about article {
+	height: 458px;
+	position: absolute;
+	text-align: center;
+	top: 150px;
+	width: 100%;
+}
+
+
+
