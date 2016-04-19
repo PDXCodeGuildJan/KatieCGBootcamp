@@ -32,6 +32,8 @@ body {
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300);
 
 body {
+	margin: 0;
+	padding: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 2em;
 	color: #fff;
@@ -79,6 +81,42 @@ body {
 	top: 150px;
 	width: 100%;
 }
+
+/* STYLES THE OPENING TEXT */
+
+.text-block {
+	width: 280px;
+	position: center;
+}
+
+.cupboard {
+	font-size: 120px;
+}
+
+.ingredients {
+
+}
+
+.million {
+
+}
+
+.most {
+
+}
+
+.popular {
+
+}
+
+.get-started {
+
+}
+
+
+
+
+
 
 
 
