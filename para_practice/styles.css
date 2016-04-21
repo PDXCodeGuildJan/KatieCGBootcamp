@@ -34,6 +34,7 @@ body {
 body {
 	margin: 0;
 	padding: 0;
+	background-color: #1b191a;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 2em;
 	color: #fff;
@@ -95,7 +96,7 @@ body {
 	font-size: 120px;
 }
 
-.ingredients {
+/*.ingredients {
 
 }
 
@@ -113,11 +114,7 @@ body {
 
 .get-started {
 
-}
-
-
-
-
+}*/
 
 
 

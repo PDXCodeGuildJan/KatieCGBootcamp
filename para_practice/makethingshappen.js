@@ -13,7 +13,7 @@ $(document).ready(function(){
       $(window).scroll(function() {
                     
         // Scroll the background at var speed
-        // the yPos is a negative value because we're scrolling it UP!                              
+        // the yPos is a negative value because we're scrolling it up                             
         var yPos = -($window.scrollTop() / $bgObj.data('speed'));
         
         // Put together our final background position
@@ -27,9 +27,9 @@ $(document).ready(function(){
  });
 
 });
-/* 
+/** 
  * Create HTML5 elements for IE's sake
- */
+ **/
 
 document.createElement("article");
 document.createElement("section");
