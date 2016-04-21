@@ -40,11 +40,13 @@ body {
 }
 
 #home {
-	background: url(roses.jpg) 50% 0 repeat fixed;
+	background: url(bread.jpg) 50% 0 repeat fixed;
 	/* make image size I want */
-	min-height: 1000px;
 	/* Responsive Design */
-	height: 1000px;
+	/*min-height: 1000px;*/
+	/*height: 1000px;*/
+	min-height: 900px;
+	height: 900px;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1920px;
@@ -61,7 +63,7 @@ body {
 } 
 
 #about {
-	background: url(tea.jpg) 50% 0 no-repeat;
+	background: url(greens.jpg) 50% 0 no-repeat;
 	min-height: 1000px;
 	/* Responsive Design */
 	height: 1000px;
