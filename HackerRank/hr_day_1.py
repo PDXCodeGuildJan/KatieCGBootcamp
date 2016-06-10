@@ -24,9 +24,29 @@ def string_split():
 
 # Mutations
 def mutations():
+    my_string = "backpack"
+    
+    l = list(my_string)
+    
+    l[5] = 'dickbutt'
+    
+    my_string = ''.join(l)
+    
+    print(my_string)
 
-    ex_string = "example"
 
-    print(ex_string[5])
+# Find a String
+def find_a_string():
 
-mutations()
+    s = input("Type in one word, no spaces: ")
+    ss = input("Type in the letter you'd like to find: ")
+    for i in range(0, len(s)):
+        print(ss[i])
+
+
+
+
+
+
+
+find_a_string()
