@@ -64,4 +64,14 @@ def if_elif_else():
     else:
         print("I didn't say " + color + " was a choice! Try again!")
 
-if_elif_else()  
+
+# Basic For Loop
+
+def for_loop_practice():
+    
+    tea = ["Green", "Black", "Herbal", "Chai"]
+
+    for x in tea:
+        print("Wow, " + x + " is a great kind of tea!") 
+
+for_loop_practice()
