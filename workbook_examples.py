@@ -36,3 +36,32 @@ print(my_dict["name"])
 del my_dict["name"]
 print(my_dict)
 
+
+# Basic While Loop
+
+def while_loop_practice():
+
+    temperature = 120
+    while temperature > 100:
+        print("Your tea is still too hot! it is " + str(temperature) + " degrees!")
+        temperature -= 1
+
+    print("You are free to drink your tea!")
+
+
+# If/Elif/Else Demo
+
+def if_elif_else():
+
+    color = input("What is your favorite color: Red, Blue or Green? ")
+
+    if color == "Red":
+        print("Red is an awesome color! You have great taste!")
+    elif color == "Blue":
+        print("Blue is a wonderful color! Good choice!")
+    elif color == "Green":
+        print("Who doesn't love green?! Good choice!")
+    else:
+        print("I didn't say " + color + " was a choice! Try again!")
+
+if_elif_else()  
