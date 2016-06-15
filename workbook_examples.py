@@ -1,44 +1,50 @@
 # mixed quotation marks
+def mixed_quotes():
+    print('Sarah said, "hello, how are you?" and walked off.')
 
-# print("Sarah said, "hello, how are you?" and walked off.")
 
-# append to a list
+# Add & Remove from lists
+def add_rem_list():
+    # append to a list
+    my_list = ["cup", "backpack", "keys", "charger"]
+    print(my_list)
+    my_list.append("backpack")
+    print(my_list)
 
-my_list = ["cup", "backpack", "keys", "charger"]
-print(my_list)
-my_list.append("backpack")
-print(my_list)
+    # remove from a list
 
-# remove from a list
+    my_list.remove("backpack")
+    print(my_list)
 
-my_list.remove("backpack")
-print(my_list)
 
 # Indexing a list
+def index_list():
 
-print(my_list[0])
-print(my_list[0:3])
-print(my_list)
+    my_list = ["cup", "backpack", "keys", "charger"]
+    print(my_list[0])
+    print(my_list[0:3])
+    print(my_list)
+
 
 # Simple Dictionary Demo
+def dictionary_play():
 
-my_dict = {"name": "Katie", "eyes": "Blue"}
-print(my_dict)
+    my_dict = {"name": "Katie", "eyes": "Blue"}
+    print(my_dict)
 
-# Add to a Dictionary
+    # Add to a Dictionary
 
-my_dict["Hair"]  = "blonde"
-print(my_dict)
+    my_dict["Hair"] = "blonde"
+    print(my_dict)
 
-# Look up a value using a key
-print(my_dict["name"])
+    # Look up a value using a key
+    print(my_dict["name"])
 
-del my_dict["name"]
-print(my_dict)
+    del my_dict["name"]
+    print(my_dict)
 
 
 # Basic While Loop
-
 def while_loop_practice():
 
     temperature = 120
@@ -50,7 +56,6 @@ def while_loop_practice():
 
 
 # If/Elif/Else Demo
-
 def if_elif_else():
 
     color = input("What is your favorite color: Red, Blue or Green? ")
@@ -66,12 +71,11 @@ def if_elif_else():
 
 
 # Basic For Loop
-
 def for_loop_practice():
-    
+
     tea = ["Green", "Black", "Herbal", "Chai"]
 
     for x in tea:
-        print("Wow, " + x + " is a great kind of tea!") 
+        print("Wow, " + x + " is a great kind of tea!")
 
 for_loop_practice()
