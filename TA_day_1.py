@@ -153,7 +153,7 @@ def if_statement_practice():
         print("zero is false")
 
 
-def loops():
+def for_loops():
     x = "I am a cat!"
     # For loop will print out each character in x
     # Takes whitespace into account
@@ -164,5 +164,21 @@ def loops():
         print(element)
 
 
+def while_loops():
+    i = 0
+    while i < 10:
+        print(i)
+        i += 1
 
-loops()
+    x = 0
+    while x > 10:
+        print(x)
+        x -= 1
+
+    while False: 
+        print("I will never print")
+
+    while True: 
+        print("This will print...FOREVER!")
+
+while_loops()

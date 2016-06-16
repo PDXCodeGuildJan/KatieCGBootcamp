@@ -78,5 +78,26 @@ def for_loop_practice():
     for x in tea:
         print("Wow, " + x + " is a great kind of tea!")
 
+# Class Example
+class Customer():
 
-for_loop_practice()
+    def __init__(self, name, balance=0.0):
+        """Return a Customer object whose name is *name* and balance
+        is *balance*"""
+        self.name = name
+        self.balance = balance
+
+    def withdraw(self, amount):
+
+        if amount > self.balance:
+            print("You cannot withdraw that amount")
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+
+        self.balance += amount
+        return self.balance
+
+
+
