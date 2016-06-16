@@ -78,4 +78,5 @@ def for_loop_practice():
     for x in tea:
         print("Wow, " + x + " is a great kind of tea!")
 
+
 for_loop_practice()
