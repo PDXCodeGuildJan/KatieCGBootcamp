@@ -78,6 +78,7 @@ def for_loop_practice():
     for x in tea:
         print("Wow, " + x + " is a great kind of tea!")
 
+
 # Class Example
 class Customer():
 
@@ -100,4 +101,48 @@ class Customer():
         return self.balance
 
 
+def built_in_functions():
+    # .upper with strings
+    string = "i will print in all uppercase!"
+    print(string.upper())
+    # .lower with strings
+    string = "I WILL PRINT IN ALL LOWERCASE!"
+    print(string.lower())
 
+    # .upper/lower demo'd with an if statement
+    color = input("What is your favorite color: Red, Blue or Green? ")
+        # .upper to convert all characters to uppercase
+    if color.upper() == "RED":
+        print("Red is an awesome color! You have great taste!")
+    elif color.upper() == "BLUE":
+        print("Blue is a wonderful color! Good choice!")
+        # .lower to convert all characters to lowercase
+    elif color.lower() == "green":
+        print("Who doesn't love green?! Good choice!")
+    else:
+        print("I didn't say " + color + " was a choice! Try again!")
+
+
+def tiger_names():
+    tigers = ["Bob", "Sasha", "Boris", "Melanie", "Cupcake"]
+
+    for bob in tigers:     
+        print(bob + " is a big cat.")
+
+
+
+tiger_names()
+
+
+
+
+
+
+
+
+
+
+
+
+
+built_in_functions()
