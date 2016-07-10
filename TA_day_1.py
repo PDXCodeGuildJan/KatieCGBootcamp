@@ -175,10 +175,10 @@ def while_loops():
         print(x)
         x -= 1
 
-    while False: 
+    while False:
         print("I will never print")
 
-    while True: 
+    while True:
         print("This will print...FOREVER!")
 
 while_loops()

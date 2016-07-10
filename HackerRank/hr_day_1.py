@@ -41,7 +41,7 @@ def find_a_string():
     s = input("Type in one word, no spaces: ")
     ss = input("Type in the letter you'd like to find: ")
     for i in range(0, len(s)):
-        print(ss[i])
+        print(s[i])
 
 
 
